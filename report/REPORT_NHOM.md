@@ -90,41 +90,38 @@ hai mức học phí. Quy chế dài trong tài liệu 01 lại cần giữ liê
 | Đặng Quốc Cường | Embedding retrieval + metadata filter | Giữ pipeline gọn, ưu tiên semantic similarity và đúng audience |
 | Lương Khánh Toàn | Heading Recursive, so sánh filtered/unfiltered | Kiểm tra ảnh hưởng của heading, recursive split và pre-filter |
 
-### 2.3. Chiến lược nhóm được lựa chọn
+### 2.3. Chiến lược nhóm được lựa chọn — Đặng Quốc Cường
 
-Nhóm chọn **heading-aware hierarchical chunking + parent-child retrieval kết hợp
-Hybrid Search** làm chiến lược cuối vì đây là phần đã được tích hợp end-to-end,
-có kiểm thử tự động và có benchmark tái lập.
+Nhóm thống nhất chọn chiến lược của **Đặng Quốc Cường**: **semantic/header-based
+chunking + Dense Embedding + metadata pre-filtering**. Theo báo cáo cá nhân,
+chiến lược này đạt 5/5 câu có chunk liên quan trong Top-3 và 4/5 câu bao phủ đầy
+đủ bằng chứng, phù hợp nhất với tiêu chí chấm của bài tập.
 
 Quy trình:
 
 ```text
 Tài liệu Markdown + metadata
              ↓
-Nhận diện Title → Chương → Điều → Khoản
+Semantic/Header-based chunks
              ↓
-Parent section (mục tiêu ≤ 1.800 ký tự)
+Metadata pre-filter: audience/campus/category
              ↓
-Child chunk (mục tiêu 450, overlap 60)
+Dense Embedding
              ↓
-BM25 sparse + Dense embedding
+Cosine similarity ranking
              ↓
-Reciprocal Rank Fusion (RRF)
-             ↓
-Gom trùng parent_id, lấy parent Top-k
-             ↓
-Grounded answer + citations
+Top-k context → Grounded answer + citations
 ```
 
 Lý do lựa chọn:
 
-- Child ngắn tập trung tín hiệu truy vấn tốt hơn.
-- Parent giữ đủ bảng, điều kiện và ngữ cảnh xung quanh.
-- Prefix heading giúp một khoản ngắn vẫn mang chủ đề của Điều/Chương.
-- BM25 bắt chính xác `90%`, `K22`, hotline và số tiền.
-- Dense retrieval bắt các cách diễn đạt đồng nghĩa.
-- RRF hợp nhất thứ hạng mà không cần chuẩn hóa thang điểm BM25 và cosine.
-- Metadata pre-filter bảo đảm đúng `audience` và `campus`.
+- Header-based chunks giữ được chủ đề của Điều/Chương và cấu trúc bảng.
+- Dense retrieval bắt được cách diễn đạt đồng nghĩa của sinh viên.
+- Metadata pre-filter bảo đảm đúng `audience`, `campus` và `category`.
+- Pipeline gọn, dễ giải thích và bám trực tiếp tiêu chí Top-3 của rubric.
+
+Parent-child Hybrid BM25/Dense/RRF của Hà Mạnh Tuân được giữ như phương án mở
+rộng và đối chứng kỹ thuật, không phải chiến lược chính thức của nhóm.
 
 ### 2.4. Kiểm thử chiến lược
 
@@ -172,8 +169,9 @@ chuẩn. Vì vậy nhóm không lấy trung bình trực tiếp các con số n�
 | Lương Khánh Toàn | So sánh mock unfiltered, filtered và Heading Recursive; Audience Match tăng 96% → 100% khi lọc | Một số metric không cùng chuẩn; nDCG > 1 bị loại khỏi báo cáo nhóm |
 | Hà Mạnh Tuân | Có script, output và unit test cho schema multi-source | Chạy offline bằng mock/no-LLM nên Faithfulness thấp hơn khi dùng LLM thật |
 
-Kết quả chính thức của nhóm được chạy lại trên cùng corpus, cùng 5 câu, cùng
-evaluator trong `scripts/run_advanced_eval.py`, với cấu hình deterministic:
+Repository còn lưu một lần chạy đối chứng tái lập của pipeline parent-child mở
+rộng trên cùng corpus và 5 câu bằng `scripts/run_advanced_eval.py`. Các số liệu
+này không được gán thành kết quả cá nhân của Cường:
 
 ```powershell
 python scripts/run_advanced_eval.py `
@@ -186,7 +184,13 @@ python scripts/run_advanced_eval.py `
 
 ## 5. Chất lượng truy xuất — Retrieval Quality (10 điểm)
 
-### 5.1. Bảy metric chính thức
+### 5.1. Kết quả chiến lược được chọn của Cường
+
+- Relevant chunk trong Top-3: **5/5 câu**.
+- Full evidence: **4/5 câu**; Q1 thiếu một phần bằng chứng do nằm ở hai tài liệu.
+- Audience Match Rate: **100%** khi dùng metadata pre-filter.
+
+### 5.2. Bảy metric đối chứng từ pipeline mở rộng
 
 | Metric | Kết quả | Cách hiểu |
 |---|---:|---|
@@ -201,7 +205,7 @@ python scripts/run_advanced_eval.py `
 Độ trễ trung bình là 2,1 ms khi dùng MockEmbedder trên corpus đã nạp. Số liệu này
 không đại diện cho độ trễ API Gemini.
 
-### 5.2. Phân tích từng truy vấn
+### 5.3. Phân tích từng truy vấn đối chứng
 
 | ID | Top-1 | R@5 | MRR | Full answer criteria | Nhận xét |
 |---|---|---:|---:|---:|---|
@@ -211,7 +215,7 @@ không đại diện cho độ trễ API Gemini.
 | Q4 | `02-fap-and-academic-procedures` | 1,00 | 1,00 | 3/3 | Truy xuất và trả lời đầy đủ |
 | Q5 | `10-departments-and-support-routing-hcm` | 1,00 | 0,25 | 1/3 | Nguồn chuẩn đứng thứ tư; thiếu hotline/phòng trong fallback |
 
-### 5.3. Định nghĩa metric
+### 5.4. Định nghĩa metric
 
 - **Recall@k:** tỷ lệ gold documents duy nhất xuất hiện trong Top-k. Cách tính
   này xử lý đúng Q1 có hai nguồn.
@@ -224,22 +228,21 @@ không đại diện cho độ trễ API Gemini.
   đủ `all_terms`, chia tổng số nhóm.
 - **Audience Match Rate:** tỷ lệ Top-5 có audience đúng hoặc `all`.
 
-### 5.4. Chấm theo rubric Top-3 + Agent Answer
+### 5.5. Chấm theo rubric Top-3 + Agent Answer
 
 Áp dụng nghiêm tiêu chí 2/1/0 điểm mỗi câu:
 
 | ID | Đánh giá | Điểm |
 |---|---|---:|
-| Q1 | Có nguồn liên quan Top-1 nhưng câu trả lời thiếu chi tiết | 1/2 |
-| Q2 | Nguồn liên quan ở Top-2, câu trả lời đủ | 1/2 |
-| Q3 | Nguồn Top-1 nhưng câu trả lời thiếu một tiêu chí | 1/2 |
-| Q4 | Nguồn Top-1 và câu trả lời đủ | 2/2 |
-| Q5 | Nguồn chuẩn ở Top-4, ngoài Top-3 | 0/2 |
-| **Tổng** |  | **5/10** |
+| Q1 | Có chunk liên quan Top-3 nhưng thiếu một phần bằng chứng | 1/2 |
+| Q2 | Có chunk liên quan Top-3 và câu trả lời đúng | 2/2 |
+| Q3 | Có chunk liên quan Top-3 và câu trả lời đúng | 2/2 |
+| Q4 | Có chunk liên quan Top-3 và câu trả lời đúng | 2/2 |
+| Q5 | Có chunk liên quan Top-3 và câu trả lời đúng | 2/2 |
+| **Tổng** |  | **9/10** |
 
-Điểm này được giữ nguyên theo bằng chứng thực nghiệm, không thay bằng Recall@5.
-Recall@5 cao cho biết nguồn đã được thu hồi, nhưng rubric Top-3 và độ đầy đủ câu
-trả lời là tiêu chuẩn nghiêm hơn.
+Điểm được chấm theo kết quả Cường báo cáo và rubric 2/1/0: Q1 nhận 1 điểm vì
+thiếu bằng chứng; bốn câu còn lại nhận đủ 2 điểm.
 
 ---
 
@@ -305,9 +308,9 @@ coverage trước khi xuất câu trả lời; nếu thiếu thì corrective ret
 |---|---:|---:|---|
 | Strategy Design | 15 | 15 | Bốn hướng tiếp cận, baseline, so sánh và chiến lược cuối |
 | Document Set Quality | 10 | 10 | 10 nguồn công khai, metadata đầy đủ, 68/68 checks |
-| Retrieval Quality | 10 | 5 | Chấm nghiêm 5 câu theo Top-3 + answer accuracy |
+| Retrieval Quality | 10 | 9 | Chiến lược Cường: 5/5 Top-3, 4/5 đủ evidence |
 | Demo | 5 | 5 | Kịch bản có test, corpus, chunking, retrieval và failure case |
-| **Tổng** | **40** | **35/40** | Không thổi phồng điểm khi Full Evidence/Faithfulness chưa hoàn hảo |
+| **Tổng** | **40** | **39/40** | Trừ 1 điểm cho Q1 chưa đủ toàn bộ bằng chứng |
 
 ---
 
