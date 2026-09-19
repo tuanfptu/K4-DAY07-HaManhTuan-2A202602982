@@ -2,13 +2,16 @@
 title: "QUY CHẾ ĐÀO TẠO ĐẠI HỌC CHÍNH QUY - Trường Đại học FPT"
 source_url: "https://daihoc.fpt.edu.vn/hoat-dong-nha-truong/tin-tuc-chung/quy-che-dao-tao-dai-hoc-chinh-quy/"
 retrieved_at: "2026-09-19"
-document_version: "2023"
+document_version: "public-web-version"
 published_at: "2023-06-09T16:32:01+07:00"
 audience: "student"
+campus: "all"
 department: "academic_affairs"
 category: "academic_regulation"
+coverage: "credits,re-study,retake,preservation,exam,gpa,graduation,ojt"
 language: "vi"
 source_domain: "daihoc.fpt.edu.vn"
+source_type: "official_public_web"
 ---
 
 # QUY CHẾ ĐÀO TẠO ĐẠI HỌC CHÍNH QUY - Trường Đại học FPT

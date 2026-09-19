@@ -5,10 +5,13 @@ retrieved_at: "2026-09-19"
 document_version: "2026"
 published_at: ""
 audience: "student"
+campus: "hcm"
 department: "finance"
 category: "tuition"
+coverage: "tuition,fees,financial-policy"
 language: "vi"
 source_domain: "daihoc.fpt.edu.vn"
+source_type: "official_public_web"
 ---
 
 # Học phí tại campus Tp. Hồ Chí Minh - Trường Đại học FPT
