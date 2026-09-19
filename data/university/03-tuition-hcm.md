@@ -1,4 +1,5 @@
 ---
+doc_id: "03-tuition-hcm"
 title: "Học phí tại campus Tp. Hồ Chí Minh - Trường Đại học FPT"
 source_url: "https://daihoc.fpt.edu.vn/hoc-phi-tai-campus-tp-ho-chi-minh/"
 retrieved_at: "2026-09-19"

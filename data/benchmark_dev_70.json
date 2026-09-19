@@ -1,0 +1,1107 @@
+[
+  {
+    "id": "dev_01",
+    "query": "Quy chế đào tạo áp dụng cho sinh viên theo hình thức đào tạo nào?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 1. Phạm vi áp dụng và đối tượng áp dụng",
+    "expected_audience": "student",
+    "gold_answer": "Quy chế áp dụng đối với sinh viên các khoá đào tạo hệ chính quy ở trình độ đại học của Trường Đại học FPT thực hiện theo hình thức tích lũy tín chỉ.",
+    "gold_keywords": [
+      "chính quy",
+      "đại học",
+      "tích lũy tín chỉ"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_02",
+    "query": "Một tín chỉ học lý thuyết tại Đại học FPT được quy định bằng bao nhiêu tiết học?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 4. Khối lượng học tập",
+    "expected_audience": "student",
+    "gold_answer": "Một tín chỉ được quy định bằng 15 tiết học lý thuyết trên lớp.",
+    "gold_keywords": [
+      "15 tiết",
+      "lý thuyết"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_03",
+    "query": "Để hoàn thành 1 tín chỉ học trên lớp, sinh viên cần tối thiểu bao nhiêu tiết tự học ngoài giờ?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 4. Khối lượng học tập",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên cần tối thiểu 30 tiết chuẩn bị, tự học ngoài giờ lên lớp.",
+    "gold_keywords": [
+      "30 tiết",
+      "tự học",
+      "chuẩn bị"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_04",
+    "query": "Một tiết học tại Trường Đại học FPT kéo dài bao nhiêu phút?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 4. Khối lượng học tập",
+    "expected_audience": "student",
+    "gold_answer": "Một tiết học bằng 45-50 phút.",
+    "gold_keywords": [
+      "45-50 phút"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_05",
+    "query": "Chương trình đào tạo Đại học FPT gồm mấy giai đoạn chính?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 3. Chương trình đào tạo và thời gian học tập",
+    "expected_audience": "student",
+    "gold_answer": "Gồm 4 giai đoạn: Giai đoạn 1 (rèn luyện tập trung và tiếng Anh), Giai đoạn 2 (chuyên môn cơ bản và cơ sở ngành), Giai đoạn 3 (OJT), Giai đoạn 4 (chuyên môn nâng cao và chuyên ngành hẹp).",
+    "gold_keywords": [
+      "4 giai đoạn",
+      "rèn luyện tập trung",
+      "OJT",
+      "chuyên môn"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_06",
+    "query": "Thời gian tối đa để sinh viên hoàn thành chương trình đào tạo là bao lâu?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 3. Chương trình đào tạo và thời gian học tập",
+    "expected_audience": "student",
+    "gold_answer": "Thời gian tối đa không vượt quá 02 lần thời gian theo kế hoạch để hoàn thành chương trình đào tạo.",
+    "gold_keywords": [
+      "02 lần",
+      "không vượt quá"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_07",
+    "query": "Nếu trượt học phần bắt buộc thì sinh viên phải đăng ký học lại vào lúc nào?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 6. Kế hoạch học tập",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên phải đăng ký học lại học phần đó ở học kỳ tiếp theo khi học phần được mở hoặc ngay trong học kỳ nếu có bố trí.",
+    "gold_keywords": [
+      "đăng ký học lại",
+      "học phần bắt buộc",
+      "học kỳ tiếp"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_08",
+    "query": "Sinh viên vắng mặt quá bao nhiêu phần trăm thời lượng học phần thì bị cấm thi?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 7. Vắng mặt trong giờ học",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên không tham gia đủ thời lượng tối thiểu (thông thường vắng quá 20% thời lượng) sẽ không được dự thi cuối kỳ và phải học lại.",
+    "gold_keywords": [
+      "thời lượng tối thiểu",
+      "không được dự thi",
+      "học lại"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_09",
+    "query": "Sinh viên được quyền thi kết thúc học phần tối đa mấy lần cho mỗi môn?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 14. Đánh giá kết quả học phần",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên được quyền thi 2 lần cuối học phần cho mỗi môn học.",
+    "gold_keywords": [
+      "2 lần",
+      "cuối học phần"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_10",
+    "query": "Khi dự thi lần 2 thì điểm thi lần 1 có được bảo lưu không?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 14. Đánh giá kết quả học phần",
+    "expected_audience": "student",
+    "gold_answer": "Khi dự thi lần 2, điểm thi lần 1 sẽ bị hủy bỏ và điểm thi lần 2 sẽ được dùng để tính điểm tổng kết.",
+    "gold_keywords": [
+      "hủy bỏ",
+      "điểm thi lần 1"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_11",
+    "query": "Thang điểm chữ nào biểu thị học phần không đạt?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 14. Đánh giá kết quả học phần",
+    "expected_audience": "student",
+    "gold_answer": "Điểm F biểu thị học phần không đạt và sinh viên phải đăng ký học lại.",
+    "gold_keywords": [
+      "Điểm F",
+      "không đạt"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_12",
+    "query": "Sinh viên được xếp hạng học lực xuất sắc khi có điểm GPA tích lũy từ bao nhiêu trở lên?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 15. Xếp loại học lực",
+    "expected_audience": "student",
+    "gold_answer": "Hạng xuất sắc yêu cầu điểm trung bình tích lũy đạt từ 3.60 đến 4.00 (hoặc 9.0 trở lên theo thang 10).",
+    "gold_keywords": [
+      "xuất sắc",
+      "3.60"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_13",
+    "query": "Sinh viên bị cảnh báo học vụ khi nào?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 16. Cảnh báo học tập và buộc thôi học",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên bị cảnh báo học tập khi điểm trung bình tích lũy hoặc số tín chỉ tích lũy không đạt mức tối thiểu theo quy định của Trường.",
+    "gold_keywords": [
+      "cảnh báo",
+      "tối thiểu",
+      "điểm trung bình"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_14",
+    "query": "Điều kiện để sinh viên được tạm dừng học tập (bảo lưu) là gì?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 17. Tạm dừng học tập",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên được tạm dừng học tập khi được điều động vào lực lượng vũ trang, bị bệnh tật cần điều trị hoặc vì lý do cá nhân sau khi hoàn thành ít nhất 1 học kỳ.",
+    "gold_keywords": [
+      "tạm dừng",
+      "học tập",
+      "lý do cá nhân",
+      "bệnh"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_15",
+    "query": "Các học phần điều kiện nào bắt buộc phải hoàn thành nhưng không tính vào GPA tích lũy?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 3. Chương trình đào tạo và thời gian học tập",
+    "expected_audience": "student",
+    "gold_answer": "Gồm: Rèn luyện tập trung, Giáo dục thể chất, Giáo dục quốc phòng và OJT.",
+    "gold_keywords": [
+      "Rèn luyện tập trung",
+      "Giáo dục thể chất",
+      "OJT",
+      "không dùng để tính"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_16",
+    "query": "Địa chỉ trang web của Cổng thông tin đào tạo FAP là gì?",
+    "expected_doc": "02-fap-and-academic-procedures",
+    "expected_section": "Bước 1: Truy cập",
+    "expected_audience": "student",
+    "gold_answer": "Địa chỉ truy cập là fap.fpt.edu.vn.",
+    "gold_keywords": [
+      "fap.fpt.edu.vn"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_17",
+    "query": "Sinh viên xem thời khóa biểu hàng tuần ở mục nào trên FAP?",
+    "expected_doc": "02-fap-and-academic-procedures",
+    "expected_section": "Bước 2: Xem thời khóa biểu",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên vào mục 'Weekly Timetable' để theo dõi lịch học, phòng học và giảng viên phụ trách.",
+    "gold_keywords": [
+      "Weekly Timetable",
+      "lịch học",
+      "thời khóa biểu"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_18",
+    "query": "Mục nào trên FAP giúp sinh viên kiểm tra tỷ lệ điểm danh các môn học?",
+    "expected_doc": "02-fap-and-academic-procedures",
+    "expected_section": "Bước 3: Xem điểm danh",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên vào mục 'View Attendance' để xem chi tiết tình trạng điểm danh và số buổi vắng.",
+    "gold_keywords": [
+      "View Attendance",
+      "điểm danh",
+      "vắng"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_19",
+    "query": "Sinh viên có thể tra cứu điểm thi và điểm thành phần môn học ở đâu trên FAP?",
+    "expected_doc": "02-fap-and-academic-procedures",
+    "expected_section": "Bước 4: Tra cứu điểm thi",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên vào mục 'Mark Report' hoặc 'Grade Report' để xem điểm thành phần và điểm tổng kết.",
+    "gold_keywords": [
+      "Mark Report",
+      "điểm thành phần",
+      "điểm thi"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_20",
+    "query": "Làm thế nào để sinh viên gửi đơn xin chuyển ngành hoặc xin nghỉ học trực tuyến?",
+    "expected_doc": "02-fap-and-academic-procedures",
+    "expected_section": "Bước 5: Gửi đơn từ trực tuyến",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên vào mục 'Academic Information' > 'Gửi đơn từ online' (Send Application) để nộp đơn trực tuyến.",
+    "gold_keywords": [
+      "Academic Information",
+      "gửi đơn từ",
+      "đơn từ online"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_21",
+    "query": "Sinh viên theo dõi tình trạng xử lý đơn từ đã nộp trên FAP ở mục nào?",
+    "expected_doc": "02-fap-and-academic-procedures",
+    "expected_section": "Bước 5: Gửi đơn từ trực tuyến",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên theo dõi tại mục 'Xem đơn' (View Application Status) trên FAP.",
+    "gold_keywords": [
+      "Xem đơn",
+      "kết quả",
+      "trạng thái"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_22",
+    "query": "Sinh viên xem số dư tài khoản và lịch sử đóng học phí ở mục nào trên FAP?",
+    "expected_doc": "02-fap-and-academic-procedures",
+    "expected_section": "Bước 6: Tra cứu tài chính",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên vào mục 'Fee Report' hoặc 'Thông tin tài chính' để xem số dư ví học phí.",
+    "gold_keywords": [
+      "Fee Report",
+      "tài chính",
+      "học phí"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_23",
+    "query": "Nếu sinh viên quên mật khẩu tài khoản FAP thì phải làm gì?",
+    "expected_doc": "02-fap-and-academic-procedures",
+    "expected_section": "Hỗ trợ tài khoản FAP",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên dùng chức năng 'Forgot Password' trên trang đăng nhập FAP hoặc liên hệ IT Helpdesk cơ sở HCM.",
+    "gold_keywords": [
+      "Forgot Password",
+      "IT Helpdesk",
+      "mật khẩu"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_24",
+    "query": "Học phí một học kỳ ngành Kỹ thuật phần mềm tại campus TP.HCM là bao nhiêu đối với KV1?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Ngành Công nghệ thông tin",
+    "expected_audience": "student",
+    "gold_answer": "Học phí một kỳ ngành Kỹ thuật phần mềm tại campus TP.HCM khu vực 1 (KV1) là 22.120.000 VNĐ.",
+    "gold_keywords": [
+      "22.120.000",
+      "Kỹ thuật phần mềm",
+      "KV1"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_25",
+    "query": "Học phí ngành Trí tuệ nhân tạo tại campus TP.HCM cho các khu vực khác là bao nhiêu?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Ngành Công nghệ thông tin",
+    "expected_audience": "student",
+    "gold_answer": "Học phí ngành Trí tuệ nhân tạo cho các khu vực khác là 31.600.000 VNĐ một học kỳ.",
+    "gold_keywords": [
+      "31.600.000",
+      "Trí tuệ nhân tạo"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_26",
+    "query": "Học phí ngành Thiết kế đồ họa và mỹ thuật số tại campus HCM là bao nhiêu mỗi kỳ?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Ngành Công nghệ thông tin",
+    "expected_audience": "student",
+    "gold_answer": "Mức học phí là 22.120.000 VNĐ (KV1) và 31.600.000 VNĐ (Các KV khác).",
+    "gold_keywords": [
+      "22.120.000",
+      "31.600.000",
+      "Thiết kế đồ họa"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_27",
+    "query": "Học phí nhóm ngành Ngôn ngữ (Anh, Hàn, Trung) tại campus HCM là bao nhiêu?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Nhóm Ngành Ngôn ngữ",
+    "expected_audience": "student",
+    "gold_answer": "Học phí nhóm ngành Ngôn ngữ là 15.480.000 VNĐ (KV1) và 22.120.000 VNĐ (Các KV khác).",
+    "gold_keywords": [
+      "15.480.000",
+      "22.120.000",
+      "Ngôn ngữ"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_28",
+    "query": "Học phí ngành Luật kinh tế tại campus TP.HCM là bao nhiêu một kỳ cho KV khác?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Ngành Luật",
+    "expected_audience": "student",
+    "gold_answer": "Học phí ngành Luật kinh tế là 22.120.000 VNĐ (Các KV khác) và 15.480.000 VNĐ (KV1).",
+    "gold_keywords": [
+      "22.120.000",
+      "15.480.000",
+      "Luật kinh tế"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_29",
+    "query": "Ngành Marketing thuộc nhóm ngành Quản trị kinh doanh tại campus HCM có học phí bao nhiêu?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Ngành Quản trị kinh doanh",
+    "expected_audience": "student",
+    "gold_answer": "Học phí ngành Marketing là 22.120.000 VNĐ (KV1) và 31.600.000 VNĐ (Các KV khác).",
+    "gold_keywords": [
+      "22.120.000",
+      "31.600.000",
+      "Marketing"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_30",
+    "query": "Chương trình Cử nhân tài năng ngành Khoa học máy tính tại campus HCM có mức học phí bao nhiêu?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Cử nhân tài năng Ngành Khoa học máy tính",
+    "expected_audience": "student",
+    "gold_answer": "Mức học phí là 22.120.000 VNĐ (KV1) và 31.600.000 VNĐ (Các KV khác).",
+    "gold_keywords": [
+      "22.120.000",
+      "31.600.000",
+      "Cử nhân tài năng"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_31",
+    "query": "Biểu học phí campus HCM được công bố áp dụng cho tân sinh viên khóa nào?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "HỌC PHÍ TẠI CAMPUS TP. HỒ CHÍ MINH",
+    "expected_audience": "student",
+    "gold_answer": "Học phí áp dụng cho tân sinh viên khóa K22 (nhập học năm 2026).",
+    "gold_keywords": [
+      "K22",
+      "2026"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_32",
+    "query": "Học sinh không học trường chuyên có được đăng ký học bổng ĐH FPT không?",
+    "expected_doc": "04-scholarship-faq",
+    "expected_section": "2. Tôi không học trường chuyên có được đăng ký không?",
+    "expected_audience": "student",
+    "gold_answer": "Hoàn toàn được. Chương trình không giới hạn học sinh trường chuyên và đánh giá công bằng dựa trên năng lực cá nhân.",
+    "gold_keywords": [
+      "Hoàn toàn được",
+      "không giới hạn",
+      "trường chuyên"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_33",
+    "query": "Thí sinh có thể ứng tuyển nhiều hạng mục học bổng cùng lúc không?",
+    "expected_doc": "04-scholarship-faq",
+    "expected_section": "3. Thí sinh có thể ứng tuyển nhiều hạng mục học bổng cùng lúc không?",
+    "expected_audience": "student",
+    "gold_answer": "Có. Nhưng nếu trúng tuyển nhiều hạng mục, thí sinh chỉ được lựa chọn 01 hạng mục học bổng để nhận.",
+    "gold_keywords": [
+      "Có",
+      "lựa chọn 01 hạng mục"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_34",
+    "query": "Thời hạn nộp hồ sơ học bổng Đại học FPT năm 2026 là ngày nào?",
+    "expected_doc": "04-scholarship-faq",
+    "expected_section": "5. Thời hạn nộp hồ sơ học bổng là khi nào?",
+    "expected_audience": "student",
+    "gold_answer": "Hạn nộp hồ sơ học bổng là 15/5/2026.",
+    "gold_keywords": [
+      "15/5/2026"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_35",
+    "query": "Độ dài tối đa của video giới thiệu bản thân khi ứng tuyển học bổng là bao nhiêu?",
+    "expected_doc": "04-scholarship-faq",
+    "expected_section": "6. Có bắt buộc phải nộp video khi ứng tuyển học bổng không?",
+    "expected_audience": "student",
+    "gold_answer": "Video không quá 2 phút (hoặc bài viết từ 350 - 500 từ).",
+    "gold_keywords": [
+      "không quá 2 phút",
+      "350 -500 từ"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_36",
+    "query": "Quy trình ứng tuyển học bổng gồm những bước chính nào?",
+    "expected_doc": "04-scholarship-faq",
+    "expected_section": "7. Quy trình ứng tuyển học bổng gồm những vòng nào?",
+    "expected_audience": "student",
+    "gold_answer": "Quy trình gồm: (1) Nộp hồ sơ và video, (2) Phỏng vấn nếu vào vòng trong, (3) Hội đồng học bổng xét duyệt.",
+    "gold_keywords": [
+      "Nộp hồ sơ",
+      "Phỏng vấn",
+      "Hội đồng học bổng xét duyệt"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_37",
+    "query": "Học bổng Đại học FPT có cấp bằng tiền mặt cho sinh viên không?",
+    "expected_doc": "04-scholarship-faq",
+    "expected_section": "FAQ",
+    "expected_audience": "student",
+    "gold_answer": "Học bổng được khấu trừ trực tiếp vào học phí từng học kỳ, không cấp bằng tiền mặt.",
+    "gold_keywords": [
+      "khấu trừ",
+      "học phí",
+      "không cấp tiền mặt"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_38",
+    "query": "Thí sinh được thầy cô đề cử có cần nộp hồ sơ ứng tuyển học bổng không?",
+    "expected_doc": "04-scholarship-faq",
+    "expected_section": "4. Nếu tôi được thầy cô đề cử thì có cần nộp hồ sơ không?",
+    "expected_audience": "student",
+    "gold_answer": "Có. Sau khi được đề cử, Ban Học bổng sẽ liên hệ để hướng dẫn nộp đầy đủ hồ sơ theo quy định.",
+    "gold_keywords": [
+      "Có",
+      "hướng dẫn hoàn thiện",
+      "nộp đầy đủ hồ sơ"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_39",
+    "query": "Phòng Dịch vụ sinh viên Đại học FPT TP.HCM hỗ trợ những dịch vụ gì cho sinh viên?",
+    "expected_doc": "05-student-services-hcm",
+    "expected_section": "Dịch vụ sinh viên",
+    "expected_audience": "student",
+    "gold_answer": "Hỗ trợ xác nhận sinh viên, cấp thẻ sinh viên, cấp bảng điểm, giải đáp thắc mắc học vụ và thủ tục hành chính.",
+    "gold_keywords": [
+      "xác nhận sinh viên",
+      "thẻ sinh viên",
+      "bảng điểm",
+      "thủ tục"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_40",
+    "query": "Địa chỉ email tiếp nhận giải quyết thắc mắc học vụ của sinh viên campus HCM là gì?",
+    "expected_doc": "05-student-services-hcm",
+    "expected_section": "Thông tin liên hệ",
+    "expected_audience": "student",
+    "gold_answer": "Email tiếp nhận liên hệ là sschcm@fe.edu.vn (hoặc liên hệ phòng Dịch vụ sinh viên).",
+    "gold_keywords": [
+      "sschcm@fe.edu.vn",
+      "Dịch vụ sinh viên"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_41",
+    "query": "Bàn dịch vụ sinh viên campus HCM nằm tại khu vực nào trong tòa nhà?",
+    "expected_doc": "05-student-services-hcm",
+    "expected_section": "Vị trí tiếp đón",
+    "expected_audience": "student",
+    "gold_answer": "Bàn hỗ trợ sinh viên đặt tại sảnh tầng trệt (Ground Floor), khu vực tòa nhà Alpha/tòa nhà chính.",
+    "gold_keywords": [
+      "tầng trệt",
+      "sảnh",
+      "hỗ trợ"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_42",
+    "query": "Sinh viên xin cấp giấy chứng nhận sinh viên tạm thời cần bao nhiêu ngày làm việc?",
+    "expected_doc": "05-student-services-hcm",
+    "expected_section": "Quy trình cấp giấy tờ",
+    "expected_audience": "student",
+    "gold_answer": "Thời gian xử lý thông thường từ 1 đến 3 ngày làm việc sau khi nộp đơn trên FAP.",
+    "gold_keywords": [
+      "1 đến 3 ngày",
+      "ngày làm việc"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_43",
+    "query": "Làm thế nào để sinh viên làm lại thẻ sinh viên khi bị mất thẻ?",
+    "expected_doc": "05-student-services-hcm",
+    "expected_section": "Cấp lại thẻ sinh viên",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên gửi yêu cầu cấp lại thẻ trên FAP, đóng lệ phí theo quy định và nhận thẻ tại phòng Dịch vụ sinh viên.",
+    "gold_keywords": [
+      "gửi yêu cầu",
+      "cấp lại thẻ",
+      "FAP"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_44",
+    "query": "Campus Đại học FPT TP. Hồ Chí Minh tọa lạc tại địa chỉ nào?",
+    "expected_doc": "06-campus-facilities-hcm",
+    "expected_section": "Vị trí Campus",
+    "expected_audience": "student",
+    "gold_answer": "Campus tọa lạc tại Khu Công nghệ cao (SHTP), TP. Thủ Đức, TP. Hồ Chí Minh.",
+    "gold_keywords": [
+      "Khu Công nghệ cao",
+      "Thủ Đức",
+      "TP. Hồ Chí Minh"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_45",
+    "query": "Thư viện campus TP.HCM có những tiện ích gì cho sinh viên tự học?",
+    "expected_doc": "06-campus-facilities-hcm",
+    "expected_section": "Thư viện hiện đại",
+    "expected_audience": "student",
+    "gold_answer": "Thư viện trang bị nguồn tài liệu số, khu vực tự học, phòng họp nhóm và máy tính tra cứu tra cứu dữ liệu.",
+    "gold_keywords": [
+      "tự học",
+      "họp nhóm",
+      "tài liệu số"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_46",
+    "query": "Sinh viên FPT học môn Giáo dục thể chất với bộ môn võ thuật truyền thống nào?",
+    "expected_doc": "06-campus-facilities-hcm",
+    "expected_section": "Vovinam",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên học bộ môn võ cổ truyền Vovinam (Việt Võ Đạo).",
+    "gold_keywords": [
+      "Vovinam",
+      "Võ"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_47",
+    "query": "Sinh viên học nhạc cụ dân tộc nào trong chương trình đào tạo của trường?",
+    "expected_doc": "06-campus-facilities-hcm",
+    "expected_section": "Nhạc cụ dân tộc",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên được học các loại nhạc cụ truyền thống như đàn tranh, đàn bầu, đàn nhị, sáo trúc, đàn nguyệt.",
+    "gold_keywords": [
+      "nhạc cụ truyền thống",
+      "đàn tranh",
+      "đàn bầu"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_48",
+    "query": "Campus HCM có các tiện ích thể thao nào ngoài sân võ?",
+    "expected_doc": "06-campus-facilities-hcm",
+    "expected_section": "Khu thể thao",
+    "expected_audience": "student",
+    "gold_answer": "Có sân bóng đá cỏ nhân tạo, sân bóng rổ, bàn bóng bàn và khu vực tập luyện thể thao ngoài trời.",
+    "gold_keywords": [
+      "sân bóng đá",
+      "bóng rổ",
+      "thể thao"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_49",
+    "query": "Khu vực Canteen của trường phục vụ những dịch vụ ăn uống nào?",
+    "expected_doc": "06-campus-facilities-hcm",
+    "expected_section": "Canteen",
+    "expected_audience": "student",
+    "gold_answer": "Canteen phục vụ cơm trưa, thức ăn nhanh, đồ uống và các quầy tiện ích cho sinh viên và cán bộ.",
+    "gold_keywords": [
+      "cơm trưa",
+      "đồ uống",
+      "tiện ích"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_50",
+    "query": "Kỳ thực tập OJT diễn ra vào học kỳ thứ mấy trong khung chương trình chuẩn?",
+    "expected_doc": "07-ojt-regulations",
+    "expected_section": "1. QUY ĐỊNH VỀ OJT",
+    "expected_audience": "student",
+    "gold_answer": "Kỳ OJT diễn ra vào giai đoạn 3 của chương trình (thường là học kỳ 6).",
+    "gold_keywords": [
+      "học kỳ 6",
+      "giai đoạn 3",
+      "OJT"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_51",
+    "query": "Sinh viên cần hoàn thành tối thiểu bao nhiêu phần trăm tín chỉ để đủ điều kiện đi OJT?",
+    "expected_doc": "07-ojt-regulations",
+    "expected_section": "1. QUY ĐỊNH VỀ OJT",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên phải đạt ít nhất 90% tổng số tín chỉ tích lũy từ học kỳ 1 đến học kỳ 5 (không tính GDTC và GDQP).",
+    "gold_keywords": [
+      "ít nhất 90%",
+      "tín chỉ",
+      "kỳ 1 đến học kỳ 5"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_52",
+    "query": "Các môn Giáo dục thể chất và Giáo dục quốc phòng có tính vào 90% tín chỉ xét OJT không?",
+    "expected_doc": "07-ojt-regulations",
+    "expected_section": "1. QUY ĐỊNH VỀ OJT",
+    "expected_audience": "student",
+    "gold_answer": "Không bao gồm các môn Giáo dục thể chất và Giáo dục quốc phòng khi tính 90% tín chỉ xét OJT.",
+    "gold_keywords": [
+      "Không bao gồm",
+      "Giáo dục thể chất",
+      "Giáo dục quốc phòng"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_53",
+    "query": "Sinh viên có bắt buộc phải tham gia buổi Orientation OJT không?",
+    "expected_doc": "07-ojt-regulations",
+    "expected_section": "1. QUY ĐỊNH VỀ OJT",
+    "expected_audience": "student",
+    "gold_answer": "Tham gia buổi Orientation OJT là bắt buộc và có điểm danh; vắng mặt sẽ không được xét duyệt đi thực tập.",
+    "gold_keywords": [
+      "bắt buộc",
+      "điểm danh",
+      "Orientation"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_54",
+    "query": "Thời gian thực tập OJT tại doanh nghiệp kéo dài trong bao lâu?",
+    "expected_doc": "07-ojt-regulations",
+    "expected_section": "1. QUY ĐỊNH VỀ OJT",
+    "expected_audience": "student",
+    "gold_answer": "Thời gian thực tập tương đương 1 học kỳ chính quy (khoảng 15-16 tuần làm việc toàn thời gian).",
+    "gold_keywords": [
+      "1 học kỳ",
+      "15-16 tuần",
+      "toàn thời gian"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_55",
+    "query": "Kết quả học phần OJT được đánh giá theo hình thức nào?",
+    "expected_doc": "07-ojt-regulations",
+    "expected_section": "1. QUY ĐỊNH VỀ OJT",
+    "expected_audience": "student",
+    "gold_answer": "Được đánh giá dựa trên nhận xét chấm điểm của doanh nghiệp và báo cáo nghiệm thu OJT (Pass/Fail).",
+    "gold_keywords": [
+      "doanh nghiệp",
+      "báo cáo",
+      "Pass/Fail"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_56",
+    "query": "Nếu sinh viên bị doanh nghiệp kỷ luật buộc thôi thực tập OJT thì xử lý thế nào?",
+    "expected_doc": "07-ojt-regulations",
+    "expected_section": "1. QUY ĐỊNH VỀ OJT",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên nhận kết quả không đạt học phần OJT và phải đăng ký thực tập lại ở học kỳ sau.",
+    "gold_keywords": [
+      "không đạt",
+      "học lại",
+      "thực tập lại"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_57",
+    "query": "Sinh viên có được chuyển đổi công ty thực tập giữa chừng trong kỳ OJT không?",
+    "expected_doc": "07-ojt-regulations",
+    "expected_section": "1. QUY ĐỊNH VỀ OJT",
+    "expected_audience": "student",
+    "gold_answer": "Không được tự ý đổi công ty; trường hợp bất khả kháng phải có đơn giải trình và được Phòng QHDN phê duyệt.",
+    "gold_keywords": [
+      "Không được tự ý",
+      "Phòng QHDN",
+      "phê duyệt"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_58",
+    "query": "Sinh viên có mấy hình thức đăng ký doanh nghiệp OJT?",
+    "expected_doc": "08-ojt-registration",
+    "expected_section": "Hình thức đăng ký OJT",
+    "expected_audience": "student",
+    "gold_answer": "Có 2 hình thức: (1) Đăng ký theo danh sách doanh nghiệp do Trường giới thiệu, (2) Sinh viên tự liên hệ doanh nghiệp thực tập.",
+    "gold_keywords": [
+      "2 hình thức",
+      "Trường giới thiệu",
+      "tự liên hệ"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_59",
+    "query": "Khi tự liên hệ doanh nghiệp thực tập OJT, sinh viên cần nộp giấy tờ gì cho trường?",
+    "expected_doc": "08-ojt-registration",
+    "expected_section": "Quy trình tự liên hệ",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên nộp Giấy tiếp nhận thực tập từ doanh nghiệp (có dấu mộc và chữ ký đại diện) kèm đề cương công việc.",
+    "gold_keywords": [
+      "Giấy tiếp nhận",
+      "dấu mộc",
+      "đề cương"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_60",
+    "query": "Doanh nghiệp tiếp nhận OJT tự liên hệ cần đáp ứng tiêu chí gì về ngành nghề?",
+    "expected_doc": "08-ojt-registration",
+    "expected_section": "Tiêu chí doanh nghiệp",
+    "expected_audience": "student",
+    "gold_answer": "Doanh nghiệp phải hoạt động hợp pháp và vị trí thực tập phải phù hợp đúng chuyên ngành đào tạo của sinh viên.",
+    "gold_keywords": [
+      "hợp pháp",
+      "phù hợp",
+      "chuyên ngành"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_61",
+    "query": "Cổng thông tin nào được dùng để sinh viên nộp hồ sơ nguyện vọng OJT?",
+    "expected_doc": "08-ojt-registration",
+    "expected_section": "Đăng ký trực tuyến",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên nộp hồ sơ và chọn nguyện vọng doanh nghiệp qua cổng đăng ký OJT hoặc link form do Phòng QHDN cung cấp.",
+    "gold_keywords": [
+      "cổng đăng ký",
+      "Phòng QHDN",
+      "nguyện vọng"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_62",
+    "query": "Hạn chót xác nhận kết quả trúng tuyển thực tập OJT được thông báo ở đâu?",
+    "expected_doc": "08-ojt-registration",
+    "expected_section": "Thời hạn",
+    "expected_audience": "student",
+    "gold_answer": "Thông báo qua email sinh viên (@fpt.edu.vn) và trên kênh thông báo chính thức của Phòng QHDN.",
+    "gold_keywords": [
+      "email",
+      "Phòng QHDN",
+      "thông báo"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_63",
+    "query": "Sinh viên tham gia chương trình trao đổi quốc tế cần đạt trình độ tiếng Anh nào?",
+    "expected_doc": "09-international-exchange-hcm",
+    "expected_section": "Điều kiện tham gia",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên phải hoàn thành giai đoạn tiếng Anh chuẩn bị hoặc có chứng chỉ tương đương IELTS 6.0 trở lên.",
+    "gold_keywords": [
+      "tiếng Anh chuẩn bị",
+      "IELTS 6.0"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_64",
+    "query": "Điểm GPA tối thiểu để sinh viên nộp hồ sơ trao đổi sinh viên quốc tế là bao nhiêu?",
+    "expected_doc": "09-international-exchange-hcm",
+    "expected_section": "Tiêu chuẩn học tập",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên thường cần điểm GPA tích lũy tối thiểu từ 2.5/4.0 trở lên và không bị kỷ luật.",
+    "gold_keywords": [
+      "GPA",
+      "2.5",
+      "tích lũy"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_65",
+    "query": "Các tín chỉ học được tại trường đối tác nước ngoài có được chuyển đổi công nhận không?",
+    "expected_doc": "09-international-exchange-hcm",
+    "expected_section": "Công nhận tín chỉ",
+    "expected_audience": "student",
+    "gold_answer": "Có. Các môn học có đề cương tương đương và đạt yêu cầu sẽ được Trường Đại học FPT xét chuyển đổi tín chỉ.",
+    "gold_keywords": [
+      "Có",
+      "chuyển đổi tín chỉ",
+      "công nhận"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_66",
+    "query": "Học phí trong kỳ trao đổi sinh viên quốc tế được tính như thế nào?",
+    "expected_doc": "09-international-exchange-hcm",
+    "expected_section": "Học phí và chi phí",
+    "expected_audience": "student",
+    "gold_answer": "Theo thỏa thuận trao đổi song phương, sinh viên thường đóng học phí tại Đại học FPT và được miễn học phí tại trường đối tác.",
+    "gold_keywords": [
+      "đóng học phí tại Đại học FPT",
+      "miễn học phí",
+      "trường đối tác"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_67",
+    "query": "Phòng Quản lý Đào tạo tại campus HCM phụ trách những nghiệp vụ nào?",
+    "expected_doc": "10-departments-and-support-routing-hcm",
+    "expected_section": "Phòng Quản lý Đào tạo",
+    "expected_audience": "student",
+    "gold_answer": "Phụ trách kế hoạch học tập, xếp thời khóa biểu, tổ chức thi, quản lý điểm và xét điều kiện tốt nghiệp.",
+    "gold_keywords": [
+      "kế hoạch học tập",
+      "thời khóa biểu",
+      "tổ chức thi",
+      "tốt nghiệp"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_68",
+    "query": "Đơn vị nào tại campus HCM chịu trách nhiệm kết nối doanh nghiệp và hỗ trợ việc làm cho sinh viên?",
+    "expected_doc": "10-departments-and-support-routing-hcm",
+    "expected_section": "Phòng Quan hệ Doanh nghiệp",
+    "expected_audience": "student",
+    "gold_answer": "Phòng Quan hệ Doanh nghiệp (Corporate Relations Department / OJT).",
+    "gold_keywords": [
+      "Quan hệ Doanh nghiệp",
+      "OJT",
+      "kết nối"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_69",
+    "query": "Thầy Lê Gia Khánh giữ chức vụ gì tại trường Đại học FPT TP.HCM?",
+    "expected_doc": "10-departments-and-support-routing-hcm",
+    "expected_section": "Khối Công Tác Sinh Viên",
+    "expected_audience": "student",
+    "gold_answer": "Thầy Lê Gia Khánh là Trưởng phòng Dịch vụ sinh viên (thuộc Khối Công Tác Sinh Viên campus HCM).",
+    "gold_keywords": [
+      "Lê Gia Khánh",
+      "Trưởng phòng Dịch vụ sinh viên",
+      "Khối Công Tác Sinh Viên"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "dev_70",
+    "query": "Khi gặp sự cố về tài khoản email sinh viên hoặc mạng wifi trường, liên hệ bộ phận nào?",
+    "expected_doc": "10-departments-and-support-routing-hcm",
+    "expected_section": "Bộ phận IT Helpdesk",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên liên hệ Bộ phận IT Helpdesk của campus HCM để được hỗ trợ kỹ thuật.",
+    "gold_keywords": [
+      "IT Helpdesk",
+      "hỗ trợ kỹ thuật",
+      "tài khoản email"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  }
+]

@@ -1,0 +1,471 @@
+[
+  {
+    "id": "test_01",
+    "query": "Khóa sinh viên tại Đại học FPT được phân thành các nhóm nhỏ dựa trên tiêu chí gì?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 2. Sinh viên và khóa sinh viên",
+    "expected_audience": "student",
+    "gold_answer": "Được phân thành các khóa nhỏ tùy theo trình độ tiếng Anh đầu vào của sinh viên.",
+    "gold_keywords": [
+      "trình độ tiếng Anh",
+      "đầu vào"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_02",
+    "query": "Một năm học tại Đại học FPT gồm những học kỳ chính nào?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 3. Chương trình đào tạo và thời gian học tập",
+    "expected_audience": "student",
+    "gold_answer": "Một năm có 3 học kỳ: Fall, Spring và Summer, mỗi học kỳ kéo dài 15-16 tuần.",
+    "gold_keywords": [
+      "Fall",
+      "Spring",
+      "Summer",
+      "15-16 tuần"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_03",
+    "query": "Một tín chỉ thực hành hoặc thí nghiệm được quy định tương đương bao nhiêu tiết?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 4. Khối lượng học tập",
+    "expected_audience": "student",
+    "gold_answer": "Một tín chỉ thực hành, thí nghiệm bằng 30 tiết học.",
+    "gold_keywords": [
+      "30 tiết",
+      "thực hành"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_04",
+    "query": "Một tín chỉ làm đồ án hoặc khóa luận tốt nghiệp tương đương bao nhiêu giờ làm việc?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 4. Khối lượng học tập",
+    "expected_audience": "student",
+    "gold_answer": "Tương đương 50 giờ làm tiểu luận, bài tập lớn hoặc đồ án tốt nghiệp.",
+    "gold_keywords": [
+      "50 giờ",
+      "đồ án"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_05",
+    "query": "Sinh viên muốn cải thiện điểm học phần đã đạt thì có được đăng ký học lại không?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 6. Kế hoạch học tập",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên được phép đăng ký học lại để cải thiện điểm theo quy định của Trường.",
+    "gold_keywords": [
+      "học lại",
+      "cải thiện điểm"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_06",
+    "query": "Hình thức đánh giá học phần gồm những thành phần điểm nào?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 14. Đánh giá kết quả học phần",
+    "expected_audience": "student",
+    "gold_answer": "Gồm điểm đánh giá quá trình (điểm thành phần) và điểm thi kết thúc học phần.",
+    "gold_keywords": [
+      "đánh giá quá trình",
+      "kết thúc học phần"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_07",
+    "query": "Sinh viên được công nhận tốt nghiệp khi thỏa mãn các điều kiện cơ bản nào?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 20. Xét và công nhận tốt nghiệp",
+    "expected_audience": "student",
+    "gold_answer": "Tích lũy đủ số tín chỉ quy định, GPA tích lũy từ 2.0 trở lên, hoàn thành các học phần điều kiện và không bị truy cứu trách nhiệm hình sự.",
+    "gold_keywords": [
+      "đủ số tín chỉ",
+      "GPA",
+      "2.0",
+      "học phần điều kiện"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_08",
+    "query": "Thời hạn giải quyết phúc khảo bài thi kết thúc học phần là bao lâu?",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 14. Đánh giá kết quả học phần",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên nộp đơn phúc khảo trong thời hạn quy định và kết quả được công bố sau khoảng 7 đến 15 ngày làm việc.",
+    "gold_keywords": [
+      "phúc khảo",
+      "ngày làm việc"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_09",
+    "query": "Sinh viên xem lịch thi cuối kỳ ở mục nào trên cổng FAP?",
+    "expected_doc": "02-fap-and-academic-procedures",
+    "expected_section": "Lịch thi",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên vào mục 'Exam Schedule' trên FAP để tra cứu ngày thi, ca thi và phòng thi.",
+    "gold_keywords": [
+      "Exam Schedule",
+      "lịch thi",
+      "phòng thi"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_10",
+    "query": "Làm thế nào để sinh viên nộp đơn phúc khảo bài thi trên cổng FAP?",
+    "expected_doc": "02-fap-and-academic-procedures",
+    "expected_section": "Thủ tục phúc khảo",
+    "expected_audience": "student",
+    "gold_answer": "Vào mục gửi đơn từ online trên FAP, chọn thủ tục 'Đơn phúc khảo bài thi' và nộp lệ phí theo hướng dẫn.",
+    "gold_keywords": [
+      "đơn từ online",
+      "phúc khảo bài thi"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_11",
+    "query": "Học phí một học kỳ ngành An toàn thông tin tại campus TP.HCM là bao nhiêu đối với KV1?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Ngành Công nghệ thông tin",
+    "expected_audience": "student",
+    "gold_answer": "Học phí ngành An toàn thông tin đối với KV1 là 22.120.000 VNĐ mỗi kỳ.",
+    "gold_keywords": [
+      "22.120.000",
+      "An toàn thông tin"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_12",
+    "query": "Học phí chuyên ngành Vi mạch bán dẫn tại campus TP.HCM cho các khu vực khác là bao nhiêu?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Ngành Công nghệ thông tin",
+    "expected_audience": "student",
+    "gold_answer": "Học phí ngành Vi mạch bán dẫn cho các khu vực khác là 31.600.000 VNĐ một học kỳ.",
+    "gold_keywords": [
+      "31.600.000",
+      "Vi mạch bán dẫn"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_13",
+    "query": "Học phí ngành Truyền thông đa phương tiện tại campus TP.HCM là bao nhiêu cho KV1?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Ngành Công nghệ truyền thông",
+    "expected_audience": "student",
+    "gold_answer": "Học phí ngành Truyền thông đa phương tiện là 22.120.000 VNĐ (KV1).",
+    "gold_keywords": [
+      "22.120.000",
+      "Truyền thông đa phương tiện"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_14",
+    "query": "Học phí ngành Quan hệ công chúng tại campus TP.HCM là bao nhiêu cho khu vực khác?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Ngành Công nghệ truyền thông",
+    "expected_audience": "student",
+    "gold_answer": "Mức học phí là 31.600.000 VNĐ mỗi học kỳ.",
+    "gold_keywords": [
+      "31.600.000",
+      "Quan hệ công chúng"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_15",
+    "query": "Ngành Quản trị khách sạn tại campus TP.HCM có mức học phí một kỳ là bao nhiêu?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Ngành Quản trị kinh doanh",
+    "expected_audience": "student",
+    "gold_answer": "Học phí ngành Quản trị khách sạn là 15.480.000 VNĐ (KV1) và 22.120.000 VNĐ (Các KV khác).",
+    "gold_keywords": [
+      "15.480.000",
+      "22.120.000",
+      "Quản trị khách sạn"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_16",
+    "query": "Ngành Logistics và quản lý chuỗi cung ứng toàn cầu tại campus HCM có học phí bao nhiêu?",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Ngành Quản trị kinh doanh",
+    "expected_audience": "student",
+    "gold_answer": "Mức học phí là 22.120.000 VNĐ (KV1) và 31.600.000 VNĐ (Các KV khác).",
+    "gold_keywords": [
+      "22.120.000",
+      "31.600.000",
+      "Logistics"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_17",
+    "query": "Đối tượng ưu tiên tham gia chương trình học bổng Đại học FPT năm 2026 là ai?",
+    "expected_doc": "04-scholarship-faq",
+    "expected_section": "1. Ai có thể tham gia chương trình?",
+    "expected_audience": "student",
+    "gold_answer": "Ưu tiên học sinh lớp 12 trên toàn quốc có thành tích học tập tốt, năng lực công nghệ hoặc hoạt động nổi bật.",
+    "gold_keywords": [
+      "học sinh lớp 12",
+      "toàn quốc",
+      "nổi bật"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_18",
+    "query": "Có bắt buộc phải nộp video khi nộp hồ sơ ứng tuyển học bổng không?",
+    "expected_doc": "04-scholarship-faq",
+    "expected_section": "6. Có bắt buộc phải nộp video khi ứng tuyển học bổng không?",
+    "expected_audience": "student",
+    "gold_answer": "Thí sinh có thể chọn nộp video không quá 2 phút hoặc bài viết giới thiệu bản thân từ 350-500 từ.",
+    "gold_keywords": [
+      "video không quá 2 phút",
+      "350 -500 từ"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_19",
+    "query": "Vòng phỏng vấn học bổng áp dụng cho các hạng mục học bổng nào?",
+    "expected_doc": "04-scholarship-faq",
+    "expected_section": "7. Quy trình ứng tuyển học bổng gồm những vòng nào?",
+    "expected_audience": "student",
+    "gold_answer": "Áp dụng đối với Học bổng Tinh hoa mở lối và Tinh hoa công nghệ.",
+    "gold_keywords": [
+      "Tinh hoa mở lối",
+      "Tinh hoa công nghệ"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_20",
+    "query": "Sinh viên muốn mượn sách thư viện campus HCM cần xuất trình giấy tờ gì?",
+    "expected_doc": "06-campus-facilities-hcm",
+    "expected_section": "Thư viện hiện đại",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên xuất trình thẻ sinh viên hoặc quét mã sinh viên trên ứng dụng của trường.",
+    "gold_keywords": [
+      "thẻ sinh viên",
+      "mã sinh viên"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_21",
+    "query": "Học kỳ OJT có mục tiêu đào tạo chính là gì đối với sinh viên?",
+    "expected_doc": "07-ojt-regulations",
+    "expected_section": "1. QUY ĐỊNH VỀ OJT",
+    "expected_audience": "student",
+    "gold_answer": "Đào tạo trong môi trường thực tế tại doanh nghiệp, rèn luyện kỹ năng nghề nghiệp và tác phong công nghiệp.",
+    "gold_keywords": [
+      "môi trường thực tế",
+      "doanh nghiệp",
+      "kỹ năng nghề nghiệp"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_22",
+    "query": "Sinh viên đi OJT có được hưởng phụ cấp hoặc lương từ doanh nghiệp không?",
+    "expected_doc": "07-ojt-regulations",
+    "expected_section": "1. QUY ĐỊNH VỀ OJT",
+    "expected_audience": "student",
+    "gold_answer": "Mức trợ cấp hoặc lương phụ thuộc vào chính sách tiếp nhận của từng doanh nghiệp cụ thể.",
+    "gold_keywords": [
+      "chính sách",
+      "doanh nghiệp",
+      "trợ cấp"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_23",
+    "query": "Khi tham gia OJT sinh viên có cần giảng viên hướng dẫn của trường theo dõi không?",
+    "expected_doc": "07-ojt-regulations",
+    "expected_section": "1. QUY ĐỊNH VỀ OJT",
+    "expected_audience": "student",
+    "gold_answer": "Có. Trường phân công giảng viên hoặc mentor giám sát tiến độ và hỗ trợ sinh viên trong suốt kỳ thực tập.",
+    "gold_keywords": [
+      "giảng viên",
+      "giám sát",
+      "mentor"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_24",
+    "query": "Quy trình phỏng vấn tuyển dụng OJT do ai tổ chức?",
+    "expected_doc": "08-ojt-registration",
+    "expected_section": "Phỏng vấn doanh nghiệp",
+    "expected_audience": "student",
+    "gold_answer": "Doanh nghiệp trực tiếp tổ chức phỏng vấn và đánh giá lựa chọn sinh viên phù hợp.",
+    "gold_keywords": [
+      "Doanh nghiệp",
+      "phỏng vấn",
+      "đánh giá"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_25",
+    "query": "Sinh viên cần xác nhận kết quả trúng tuyển OJT trong vòng bao nhiêu ngày kể từ khi nhận thông báo?",
+    "expected_doc": "08-ojt-registration",
+    "expected_section": "Xác nhận kết quả",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên phải phản hồi xác nhận theo hạn chót cụ thể được ghi trong email thông báo trúng tuyển.",
+    "gold_keywords": [
+      "hạn chót",
+      "email thông báo",
+      "xác nhận"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_26",
+    "query": "Chương trình trao đổi quốc tế thường được tổ chức với các trường đại học ở quốc gia nào?",
+    "expected_doc": "09-international-exchange-hcm",
+    "expected_section": "Đối tác quốc tế",
+    "expected_audience": "student",
+    "gold_answer": "Với các trường đại học đối tác tại Nhật Bản, Hàn Quốc, Đài Loan, Đức, Pháp, Úc và các nước Đông Nam Á.",
+    "gold_keywords": [
+      "Nhật Bản",
+      "Hàn Quốc",
+      "đối tác"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_27",
+    "query": "Sinh viên tham gia trao đổi sinh viên quốc tế tự chi trả những khoản chi phí nào?",
+    "expected_doc": "09-international-exchange-hcm",
+    "expected_section": "Học phí và chi phí",
+    "expected_audience": "student",
+    "gold_answer": "Sinh viên tự chi trả vé máy bay, bảo hiểm quốc tế, visa và chi phí sinh hoạt ăn ở tại nước sở tại.",
+    "gold_keywords": [
+      "vé máy bay",
+      "bảo hiểm",
+      "chi phí sinh hoạt"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_28",
+    "query": "Khối Công tác sinh viên tại campus HCM phụ trách những hoạt động nào?",
+    "expected_doc": "10-departments-and-support-routing-hcm",
+    "expected_section": "Khối Công Tác Sinh Viên",
+    "expected_audience": "student",
+    "gold_answer": "Quản lý hoạt động phong trào, câu lạc bộ sinh viên, tư vấn tâm lý và các dịch vụ đời sống sinh viên.",
+    "gold_keywords": [
+      "phong trào",
+      "câu lạc bộ",
+      "tư vấn tâm lý",
+      "dịch vụ sinh viên"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_29",
+    "query": "Phòng PDP (Phát triển cá nhân) tại campus HCM hỗ trợ sinh viên rèn luyện nội dung gì?",
+    "expected_doc": "10-departments-and-support-routing-hcm",
+    "expected_section": "Phòng Phát triển cá nhân (PDP)",
+    "expected_audience": "student",
+    "gold_answer": "Rèn luyện kỹ năng mềm, kỹ năng lãnh đạo, hoạt động cộng đồng và các sự kiện ngoại khóa.",
+    "gold_keywords": [
+      "kỹ năng mềm",
+      "lãnh đạo",
+      "ngoại khóa"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  },
+  {
+    "id": "test_30",
+    "query": "Địa chỉ phòng y tế campus HCM để sinh viên sơ cứu khi có vấn đề sức khỏe ở đâu?",
+    "expected_doc": "10-departments-and-support-routing-hcm",
+    "expected_section": "Phòng Y tế",
+    "expected_audience": "student",
+    "gold_answer": "Phòng Y tế nằm tại khu vực tầng trệt tòa nhà đào tạo chính, luôn có cán bộ y tế trực trong giờ học.",
+    "gold_keywords": [
+      "Phòng Y tế",
+      "tầng trệt",
+      "cán bộ y tế"
+    ],
+    "metadata_filter": {
+      "audience": "student"
+    }
+  }
+]

@@ -1,4 +1,5 @@
 ---
+doc_id: "07-ojt-regulations"
 title: "[OJT SPRING 2026] - THÔNG BÁO THAM DỰ ORIENTATION OJT - Trường Đại học FPT"
 source_url: "https://daihoc.fpt.edu.vn/thong-bao-huong-dan/ojt-spring-2026-thong-bao-tham-du-orientation-ojt/"
 retrieved_at: "2026-09-19"

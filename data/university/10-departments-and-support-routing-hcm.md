@@ -1,4 +1,5 @@
 ---
+doc_id: "10-departments-and-support-routing-hcm"
 title: "Liên hệ & Bản đồ"
 source_url: "https://daihoc.fpt.edu.vn/hcm/ban-lanh-dao-campus-hcm/"
 retrieved_at: "2026-09-19"

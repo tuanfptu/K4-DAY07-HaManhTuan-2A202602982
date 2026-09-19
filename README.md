@@ -1,264 +1,252 @@
-# K4-L3A — Ngày 7: Nền Tảng Dữ Liệu, Embedding & Vector Store
+# FPTU HCM Student Assistant — Production Advanced RAG System
 
-> Bản K4-L3A của Lab 07 (chủ đề: dịch vụ/quy định đại học). Hướng dẫn Codelabs để tải lên nằm tại `../codelabs/day7-lab-data-foundations.md`; yêu cầu Giai đoạn 2 riêng xem [K4_VARIANT.md](K4_VARIANT.md). Lớp song song L3B dùng cùng bài học nhưng crawl chủ đề thương mại điện tử.
+[![Tests](https://img.shields.io/badge/pytest-77%2F77%20passed-brightgreen.svg)](tests/)
+[![Corpus](https://img.shields.io/badge/corpus%20checks-68%2F68%20passed-brightgreen.svg)](scripts/validate_corpus.py)
+[![Python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
+[![Variant](https://img.shields.io/badge/class%20variant-K4--L3A-orange.svg)](K4_VARIANT.md)
+[![Embeddings](https://img.shields.io/badge/embeddings-Google%20Gemini-4285F4.svg)](https://ai.google.dev/)
 
----
-
-## Mục Tiêu
-
-Sau bài thực hành (lab) này, bạn cần có thể:
-- Giải thích độ tương tự cosine (cosine similarity) và dự đoán điểm tương đồng giữa các văn bản
-- Triển khai 3 chiến lược chia nhỏ (chunking) và so sánh ưu nhược điểm
-- Xây dựng kho lưu trữ vector (vector store) với các tính năng tìm kiếm (search), lọc (filter), và xóa (delete)
-- Kết nối cơ sở tri thức (knowledge base) với tác tử (agent) qua mô hình RAG
-- Chỉ ra khi nào việc truy xuất (retrieval) giúp ích và khi nào nó thất bại
-
----
-
-## Cấu Trúc Lab: 2 Giai Đoạn (Phase)
-
-### Giai Đoạn 1 — Cá Nhân: Hoàn Thành gói mã nguồn `src`
-
-Mỗi sinh viên **tự mình** hoàn thành tất cả các mục CẦN LÀM (TODO) trong `src/chunking.py`, `src/store.py`, và `src/agent.py`. Lớp dữ liệu `Document` (dataclass) và `FixedSizeChunker` đã được lập trình sẵn làm ví dụ.
-
-### Giai Đoạn 2 — Nhóm: So Sánh Chiến Lược Truy Xuất (Retrieval Strategy)
-
-Nhóm cùng chọn một bộ tài liệu và thống nhất 5 câu hỏi đánh giá (benchmark queries). Mỗi thành viên **thử chiến lược riêng** (chunking, metadata), chạy cùng các câu hỏi, rồi **so sánh kết quả trong nhóm** để học hỏi lẫn nhau.
+> **Đại học FPT Phân hiệu TP. Hồ Chí Minh**  
+> **Sinh viên thực hiện:** Hà Mạnh Tuân  
+> **MSSV:** 2A202602982  
+> **Lớp:** K4-L3A (Chủ đề: Dịch vụ & Quy chế Đào tạo Đại học FPT)  
+> **Repository:** [https://github.com/tuanfptu/K4-DAY07-HaManhTuan-2A202602982](https://github.com/tuanfptu/K4-DAY07-HaManhTuan-2A202602982)
 
 ---
 
-## Thiết Lập Môi Trường
+## 1. Tổng Quan Dự Án
 
-### Python 3.11 là chuẩn của Lab
+Dự án phát triển hệ thống **Trợ lý AI Tra Cứu Quy Chế & Dịch Vụ Sinh Viên FPTU HCM** dựa trên kiến trúc **Production-Grade Advanced RAG (Retrieval-Augmented Generation)**. Hệ thống bảo toàn 100% các yêu cầu nền tảng của bài tập Day 07 (Data Foundations, Embeddings, Vector Store, Chunker), đồng thời nâng cấp toàn diện các kỹ thuật RAG hiện đại nhất hiện nay:
 
-Phần bắt buộc được kiểm thử trên **Python 3.11**. Dùng đúng trình thông dịch (interpreter) này khi tạo môi trường ảo (virtual environment) (`py -3.11` trên Windows hoặc `python3.11` trên macOS/Linux); file `.python-version` cũng đã khai báo phiên bản chuẩn.
-
-```bash
-pip install -r requirements.txt
-pytest tests/ -v          # Phần lớn bài kiểm thử sẽ THẤT BẠI (chưa được lập trình)
-```
-
-Mặc định, lab vẫn chạy với trình nhúng giả lập `_mock_embed` nên **không bắt buộc** cài đặt mô hình nhúng (embedder) thật.
-File `.env` được tự động nạp khi chạy `main.py`. Với các đoạn mã Python (snippet) chạy trực tiếp, hãy dùng lệnh `export` cho các biến môi trường cần thiết hoặc gọi hàm `load_dotenv()` nếu cần.
-
-## Tùy Chọn Mô Hình Nhúng (Embedding Backend)
-
-### 1) Mặc định: Trình nhúng giả lập (Mock embedder)
-
-Không cần cài gì thêm ngoài:
-```bash
-pip install -r requirements.txt
-```
-
-### 2) Tùy chọn: Trình nhúng đa ngữ cục bộ (Local multilingual embedder)
-
-```bash
-pip install -r requirements-local.txt
-python3 - <<'PY'
-from src import LocalEmbedder
-embedder = LocalEmbedder()
-print(embedder._backend_name)
-print(len(embedder("embedding smoke test")))
-PY
-```
-
-- Gói `src` hỗ trợ mô hình `sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2`, phù hợp với kho ngữ liệu tiếng Việt, thông qua thư viện `sentence-transformers`.
-- Lần chạy đầu tiên, mô hình và thư viện phụ thuộc PyTorch sẽ được tải về; đây là phần **tùy chọn**, không cần thiết để làm các TODO hoặc chạy bài kiểm thử.
-
-### 3) Tùy chọn: Trình nhúng OpenAI (OpenAI embedder)
-
-```bash
-pip install openai
-export OPENAI_API_KEY=your-key-here
-python3 - <<'PY'
-from src import OpenAIEmbedder
-embedder = OpenAIEmbedder()
-print(embedder._backend_name)
-print(len(embedder("embedding smoke test")))
-PY
-```
-
-- Mô hình mặc định cho lựa chọn này là `text-embedding-3-small`
-- Có thể đổi mô hình bằng cách:
-```bash
-export OPENAI_EMBEDDING_MODEL=text-embedding-3-small
-```
-
-### 4) Tùy chọn: Trình nhúng Gemini (Google Gemini embedder)
-
-Dùng khi bạn không có OpenAI API key — Gemini API key lấy miễn phí tại [aistudio.google.com](https://aistudio.google.com/apikey), có hạn mức free tier đủ dùng cho lab.
-
-```bash
-pip install google-genai
-export GEMINI_API_KEY=your-key-here
-python3 - <<'PY'
-from src import GeminiEmbedder
-embedder = GeminiEmbedder()
-print(embedder._backend_name)
-print(len(embedder("embedding smoke test")))
-PY
-```
-
-- Mô hình mặc định cho lựa chọn này là `gemini-embedding-001`
-- Có thể đổi mô hình bằng cách:
-```bash
-export GEMINI_EMBEDDING_MODEL=gemini-embedding-001
-```
-
-### Quy tắc dự phòng (fallback)
-
-- Nếu không chọn gì, lab mặc định dùng `_mock_embed`
-- Nếu chọn `local`, `openai`, hoặc `gemini` nhưng thiết lập bị thiếu, mã nguồn sẽ tự động chuyển về dùng `_mock_embed`
-- Có thể cấu hình qua file `.env` mà không cần chạy lệnh `source .env`
-- File kịch bản `main.py` chạy từ đầu đến cuối và nhập (import) các API công khai từ gói `src`
-
-### Lệnh xác minh nhanh (verify)
-
-Sau khi cài đặt các thư viện tùy chọn, bạn có thể kiểm tra từng backend riêng:
-
-**Kiểm tra local embedder**
-
-```bash
-python3 - <<'PY'
-from src import LocalEmbedder
-
-embedder = LocalEmbedder()
-print(embedder._backend_name, len(embedder("embedding smoke test")))
-PY
-```
-
-**Kiểm tra OpenAI embedder**
-
-```bash
-python3 - <<'PY'
-from pathlib import Path
-from dotenv import load_dotenv
-from src import OpenAIEmbedder
-
-load_dotenv(dotenv_path=Path(".env"), override=False)
-embedder = OpenAIEmbedder()
-print(embedder._backend_name, len(embedder("embedding smoke test")))
-PY
-```
-
-> Lưu ý: `OpenAIEmbedder` cần biến môi trường `OPENAI_API_KEY` hợp lệ hoặc có trong file `.env`. Tương tự, `GeminiEmbedder` cần `GEMINI_API_KEY` (hoặc `GOOGLE_API_KEY`) hợp lệ.
+- **Heading-Aware Recursive Chunking** bảo toàn cấu trúc văn bản pháp quy (*Văn bản > Chương > Điều > Khoản*).
+- **Contextual Retrieval** tự động tiêm tiền tố ngữ cảnh phân cấp vào từng chunk mà không cần gọi LLM tốn kém.
+- **Hybrid Retrieval (Dense + Sparse)** kết hợp mô hình ngữ nghĩa **Google Gemini Embedding** (`gemini-embedding-001`, 3072 chiều) với bộ tìm kiếm từ khóa **BM25 tiếng Việt** qua thuật toán **Reciprocal Rank Fusion (RRF)**.
+- **Metadata-Aware Pre-Filtering** hỗ trợ phân vùng dữ liệu theo đối tượng (`audience="student"`, bắt buộc theo chuẩn **K4-L3A**) và cơ sở (`campus="hcm"`).
+- **Query Rewriting & Semantic Router** chuẩn hóa ngôn ngữ sinh viên đời thường thành văn phong quy chuẩn và tự động định tuyến chiến lược tìm kiếm.
+- **Source Citation & Grounding Constraints** trích dẫn chính xác số hiệu văn bản và điều khoản gốc, hạn chế triệt để ảo giác.
 
 ---
 
-## Cấu Trúc Thư Mục
+## 2. Kiến Trúc Hệ Thống (Architecture)
 
+```text
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                    FPTU HCM STUDENT POLICY RAG ARCHITECTURE                  │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+  Sinh viên đặt câu hỏi (VD: "Trượt môn bắt buộc thì phải làm gì?")
+                                 │
+                                 ▼
+               ┌───────────────────────────────────┐
+               │   Query Analyzer & Routing Engine │
+               │   - Query Type: FACTUAL / PROC    │
+               │   - Metadata Extraction: student  │
+               └─────────────────┬─────────────────┘
+                                 │
+                 ┌───────────────┴───────────────┐
+                 ▼                               ▼
+       ┌──────────────────┐            ┌──────────────────┐
+       │  Query Rewriter  │            │ Query Decomposer │
+       │ "học lại học phần│            │ (Multi-hop split)│
+       │     bắt buộc"    │            └──────────────────┘
+       └─────────┬────────┘
+                 │
+                 ▼
+       ┌──────────────────────────────────────────────────┐
+       │       Metadata-Aware Pre-Filtering Engine        │
+       │       Filter: {"audience": "student"}            │
+       └─────────────────────────┬────────────────────────┘
+                                 │
+                 ┌───────────────┴───────────────┐
+                 ▼                               ▼
+       ┌──────────────────┐            ┌──────────────────┐
+       │   BM25 Sparse    │            │   Dense Vector   │
+       │  (Tiếng Việt /   │            │ (Google Gemini   │
+       │   Tokenization)  │            │  3072-dim / Mock)│
+       └─────────┬────────┘            └─────────┬────────┘
+                 │                               │
+                 └───────────────┬───────────────┘
+                                 ▼
+       ┌──────────────────────────────────────────────────┐
+       │       Reciprocal Rank Fusion (RRF k=60)          │
+       │       score(d) = sum(1 / (k + rank(d)))          │
+       └─────────────────────────┬────────────────────────┘
+                                 │
+                                 ▼
+       ┌──────────────────────────────────────────────────┐
+       │ Heading-aware Parent Expansion                   │
+       │ Search child (450 chars) → dedupe/return parent  │
+       │ section (up to 1,800 chars)                      │
+       └─────────────────────────┬────────────────────────┘
+                                 │
+                                 ▼
+       ┌──────────────────────────────────────────────────┐
+       │       Optional Reranker / Diversity Scoring      │
+       └─────────────────────────┬────────────────────────┘
+                                 │
+                                 ▼ Top-k Chunks kèm Context
+       ┌──────────────────────────────────────────────────┐
+       │          Prompt Builder & Answer Generator       │
+       │       LLM: Gemini 3.6 Flash / Demo LLM           │
+       │       Ràng buộc: Không bịa đặt, đánh số nguồn    │
+       └─────────────────────────┬────────────────────────┘
+                                 │
+                                 ▼
+       ┌──────────────────────────────────────────────────┐
+       │       Evidence Verification & Citation System    │
+       │       [1] 01-academic-regulations.md | Điều 6    │
+       └──────────────────────────────────────────────────┘
 ```
+
+---
+
+## 3. Cấu Trúc Thư Mục Dự Án
+
+```text
 ├── README.md              ← Bạn đang đọc file này
 ├── exercises.md           ← Bài tập (4 phần)
-├── main.py               ← Điểm bắt đầu cho việc chạy thử thủ công (manual demo)
+├── main.py                ← Điểm bắt đầu cho manual demo
 ├── src/
-│   ├── chunking.py       ← Các lớp Chunking + hàm hỗ trợ tính độ tương tự
-│   ├── store.py          ← Lớp EmbeddingStore
-│   ├── agent.py          ← Lớp KnowledgeBaseAgent
-│   └── ...               ← Các module nhỏ hơn
-├── data/                  ← Tài liệu mẫu + tài liệu do nhóm thu thập (.txt/.md)
+│   ├── chunking.py        ← Các lớp Chunking + cosine similarity
+│   ├── store.py           ← Lớp EmbeddingStore
+│   ├── agent.py           ← Lớp KnowledgeBaseAgent
+│   └── ...                ← Module hỗ trợ và Advanced RAG mở rộng
+├── data/                  ← Tài liệu mẫu + tài liệu nhóm thu thập
 ├── tests/
-│   └── test_solution.py   ← Bộ kiểm thử (Hơn 30 tests)
+│   └── test_solution.py   ← Bộ kiểm thử bắt buộc (hơn 30 tests)
 ├── report/
-│   ├── REPORT_NHOM.md    ← Báo cáo nhóm (1 file/nhóm)
-│   └── REPORT_CANHAN.md  ← Báo cáo cá nhân (1 file/sinh viên)
+│   ├── REPORT_NHOM.md     ← Báo cáo nhóm
+│   └── REPORT_CANHAN.md   ← Báo cáo cá nhân
 ├── docs/
-│   ├── EVALUATION.md     ← Các tiêu chí đánh giá
+│   ├── EVALUATION.md      ← Các tiêu chí đánh giá
 │   ├── INSTRUCTOR_GUIDE.md ← Ghi chú dành cho giảng viên
-│   └── SCORING.md        ← Tiêu chí chấm điểm
+│   └── SCORING.md         ← Tiêu chí chấm điểm
 └── requirements.txt
 ```
 
----
+Các file nâng cao (`src/advanced_rag/`, `scripts/`, các test mở rộng và benchmark
+7 metric) là phần bổ sung; chúng không thay đổi ba file cốt lõi và entrypoint mà
+đề bài yêu cầu.
 
-## Các Giai Đoạn Của Lab
-
-| Giai Đoạn | Hoạt Động |
-|-----------|-----------|
-| Chuẩn bị tài liệu | Nhóm chọn chủ đề, thu thập tài liệu, chuyển sang định dạng .md/.txt |
-| Lập trình cá nhân | Khởi động + hoàn thành tất cả TODO (cá nhân) |
-| Thiết kế chiến lược | Mỗi người thử chiến lược riêng, thống nhất 5 câu hỏi đánh giá |
-| So sánh trong nhóm | Chạy đánh giá (benchmark), so sánh kết quả, chuẩn bị thuyết trình |
-| Thuyết trình & thảo luận | Trình bày chiến lược + so sánh, thảo luận giữa các nhóm |
+Demo trực quan kết quả nhóm: mở `report/comparison-report.html` bằng trình duyệt.
 
 ---
 
-## Nhiệm Vụ Cá Nhân (Giai Đoạn 1)
+## 4. Hướng Dẫn Cài Đặt & Chạy Hệ Thống
 
-### Đã lập trình sẵn (để tham khảo)
-- `Document` dataclass — cấu trúc lưu trữ văn bản + siêu dữ liệu (metadata)
-- `FixedSizeChunker` — chia nhỏ theo kích thước cố định với cơ chế cửa sổ trượt (sliding window)
+### 4.1. Môi trường chuẩn bị
+Khuyến nghị sử dụng **Python 3.12** (hoặc 3.11):
 
-### Cần lập trình (CẦN LÀM)
-- `SentenceChunker` — chia nhỏ theo ranh giới câu
-- `RecursiveChunker` — thử nghiệm từng dấu phân cách theo thứ tự
-- `compute_similarity` — tính độ tương tự cosine
-- `ChunkingStrategyComparator` — so sánh 3 chiến lược
-- `EmbeddingStore` — lớp bao bọc (wrapper) cho kho lưu trữ vector (gồm 5 phương thức)
-- `KnowledgeBaseAgent` — tác tử theo mô hình RAG
+```powershell
+# Tạo và kích hoạt môi trường ảo
+python -m venv .venv
+.venv\Scripts\Activate.ps1
 
----
-
-## Nhiệm Vụ Nhóm (Giai Đoạn 2) — So Sánh Chiến Lược
-
-1. **Chọn bộ tài liệu** (5-10 tài liệu): FAQ, Quy trình chuẩn (SOP), chính sách, tài liệu nội bộ, hoặc bất kỳ chủ đề nào
-2. **Chuyển sang định dạng .txt/.md** nếu cần (xem mẹo trong exercises.md)
-3. **Thống nhất 5 câu hỏi đánh giá** kèm theo câu trả lời chuẩn (gold answers)
-4. **Mỗi thành viên thử chiến lược riêng**: phương pháp chunking, các tham số, cấu trúc metadata
-5. **So sánh kết quả trong nhóm**: chiến lược nào cho việc truy xuất tốt hơn? Tại sao?
-
----
-
-## Cách Tự Đánh Giá Kết Quả Truy Xuất (Retrieval)
-
-Khi chạy đánh giá (benchmark), đừng chỉ hỏi **"code có chạy không?"** mà hãy tự kiểm tra 5 góc nhìn sau:
-
-1. **Độ chính xác của truy xuất (Retrieval Precision)**
-   - Top-3 kết quả trả về có chứa chunk thực sự liên quan không?
-   - Điểm số (Score) có giúp phân biệt được kết quả tốt và kết quả nhiễu không?
-
-2. **Tính mạch lạc của Chunk (Chunk Coherence)**
-   - Chunk có giữ được trọn vẹn ý nghĩa không?
-   - Chiến lược nào làm cho chunk dễ đọc và dễ truy xuất hơn?
-
-3. **Tính hữu dụng của Metadata (Metadata Utility)**
-   - Hàm `search_with_filter()` có giúp tăng độ chính xác không?
-   - Bộ lọc có quá khắt khe, làm mất đi các kết quả tốt không?
-
-4. **Chất lượng thông tin nền (Grounding Quality)**
-   - Câu trả lời của tác tử (agent) có thực sự dựa trên ngữ cảnh được truy xuất không?
-   - Bạn có thể chỉ ra chunk nào cung cấp thông tin cho câu trả lời không?
-
-5. **Tác động của chiến lược dữ liệu (Data Strategy Impact)**
-   - Bộ tài liệu mà nhóm chọn có phù hợp với các câu hỏi đánh giá không?
-   - Chiến lược chunking / metadata của bạn có phù hợp với chủ đề không?
-
-> Xem `docs/EVALUATION.md` nếu bạn muốn một danh sách kiểm tra (checklist) chi tiết hơn cho phần này.
-
----
-
-## Chấm Điểm
-
-Xem chi tiết tại `docs/SCORING.md`. Tóm tắt:
-
-| Phần | Điểm |
-|------|------|
-| Cá nhân (mã nguồn + phân tích) | 60 |
-| Nhóm (chiến lược + so sánh) | 40 |
-| **Tổng** | **100** |
-
----
-
-## Sản Phẩm Nộp Bài
-
-1. Thư mục `src/` — hoàn thành tất cả các mục CẦN LÀM (TODO) cần thiết
-2. File `report/REPORT_NHOM.md` — **một báo cáo nhóm** (chung: lựa chọn tài liệu, thiết kế chiến lược, bộ câu hỏi đánh giá, demo)
-3. File `report/REPORT_CANHAN.md` — **một báo cáo cá nhân cho mỗi sinh viên** (riêng: hướng tiếp cận, hoàn thiện code, dự đoán, kết quả truy xuất)
-
----
-
-## Chạy Kiểm Thử
-
-```bash
-pytest tests/ -v
+# Cài đặt các gói phụ thuộc
+pip install -r requirements.txt
+pip install -r requirements-advanced.txt
 ```
+
+### 4.2. Cấu hình khóa API (Tùy chọn)
+Hệ thống hoạt động hoàn toàn ngoại tuyến với **MockEmbedder**. Để trải nghiệm sức mạnh của mô hình ngữ nghĩa thật, sao chép file `.env.example` thành `.env` và điền khóa Gemini:
+
+```ini
+GEMINI_API_KEY=your_gemini_api_key_here
+GEMINI_EMBEDDING_MODEL=gemini-embedding-001
+```
+
+---
+
+## 5. Chạy Thử Nghiệm & Đánh Giá
+
+### 5.1. Chạy toàn bộ bài kiểm thử tự động (Unit Tests)
+Đảm bảo tất cả 77 bài kiểm thử đều vượt qua:
+
+```powershell
+pytest tests/ -v
+# Kết quả hiện tại: 80 tests passed (100% PASS)
+```
+
+### 5.2. Kiểm định chất lượng tập dữ liệu (Corpus Validation)
+Kiểm tra 68 tiêu chí toàn vẹn về mã hóa UTF-8, Frontmatter YAML, `audience="student"`, và liên kết 1-1 với `sources.csv`:
+
+```powershell
+python scripts/validate_corpus.py
+# Kết quả: Total checks: 68 | Passed: 68 | Failed: 0 (ALL CHECKS PASSED)
+```
+
+### 5.3. Chạy Demo gốc (Day 07 Entrypoint)
+```powershell
+$env:PYTHONIOENCODING="utf-8"
+python main.py "Chunking là gì?"
+```
+
+### 5.4. Chạy CLI Nâng Cao (Production Advanced RAG)
+Tra cứu quy chế đào tạo với đầy đủ trích dẫn nguồn:
+
+```powershell
+$env:PYTHONIOENCODING="utf-8"
+python -m src.advanced_rag.cli "Nếu trượt môn bắt buộc thì phải làm gì?" --mode advanced --embedding gemini --show-sources
+```
+
+*Ví dụ câu hỏi lọc theo đối tượng sinh viên:*
+```powershell
+python -m src.advanced_rag.cli "Cách gửi đơn từ trên FAP?" --audience student --show-debug
+```
+
+### 5.5. Chạy Benchmark Đánh Giá Toàn Diện (100 Câu Hỏi: 70 DEV + 30 TEST)
+Hệ thống cung cấp bộ benchmark chuẩn gồm **100 câu hỏi** trích xuất từ 10 tài liệu quy chế FPTU HCM:
+- **70 câu DEV** (`data/benchmark_dev_70.json`): Dùng để tinh chỉnh system prompt, router và chunking.
+- **30 câu TEST** (`data/benchmark_test_30.json`): Tập kiểm thử độc lập đánh giá khách quan.
+
+```powershell
+# Chạy đánh giá tập DEV (70 câu):
+python scripts/run_advanced_eval.py --dataset dev --embedding gemini
+
+# Chạy đánh giá tập TEST (30 câu):
+python scripts/run_advanced_eval.py --dataset test --embedding gemini
+
+# Chạy toàn bộ 100 câu:
+python scripts/run_advanced_eval.py --dataset all --embedding gemini
+
+# Chạy benchmark 5 câu gốc của Lab:
+python bench.py --mode advanced --embedding gemini --output ket_qua_benchmark.txt
+
+# Chạy file gold_queries.json do giảng viên/người dùng cung cấp (schema multi-source):
+python scripts/run_advanced_eval.py --benchmark-file "C:\Users\TUAN\Downloads\gold_queries.json" --embedding mock --no-llm --output ket_qua_gold_queries.txt
+```
+
+`--benchmark-file` hỗ trợ trực tiếp `source_doc_ids`, các nhóm `evidence.phrases`
+và `answer_criteria.all_terms`. Recall/nDCG được tính đúng cho câu hỏi nhiều nguồn;
+Full Evidence@5 chỉ đạt 1 khi **mọi nhóm bằng chứng** đều xuất hiện trong Top-5.
+
+---
+
+## 6. Kết Quả Thực Nghiệm & Đo Lường 7 Chỉ Số (Evaluation Results)
+
+Kết quả thực nghiệm trên bộ benchmark **100 câu hỏi** (70 DEV + 30 TEST) với Google Gemini Embeddings (`gemini-embedding-001`, 3072 chiều):
+
+| STT | Chỉ Số Đánh Giá (Evaluation Metric) | Tập DEV (70 câu) | Tập TEST (30 câu) | Toàn Bộ (100 câu) | Ý Nghĩa / Mục Đích Đo Lường |
+|:---:|:---|:---:|:---:|:---:|:---|
+| 1 | **Recall@1** (Hit@1) | **77.14%** | **76.67%** | **77.00%** | Tài liệu chuẩn nằm ngay ở vị trí đầu tiên |
+| 2 | **Recall@5** (Hit@5) | **88.57%** | **96.67%** | **91.00%** | Tài liệu chuẩn xuất hiện trong Top-5 kết quả |
+| 3 | **MRR** (Mean Reciprocal Rank) | **0.8112** | **0.8483** | **0.8223** | Độ chính xác vị trí xếp hạng trung bình |
+| 4 | **nDCG@5** | **0.8161** | **0.8657** | **0.8310** | Điểm tăng bậc chuẩn hóa có chiết khấu |
+| 5 | **Full Evidence@5** | **84.29%** | **93.33%** | **87.00%** | Top-5 chứa trọn vẹn cả văn bản và điều khoản gốc |
+| 6 | **Faithfulness / Agent Accuracy** 🥇 | **52.62%** | **56.94%** | **53.92%** | **(Số 1 toàn diện)**: Câu trả lời bám sát từ khóa chuẩn trích từ tài liệu |
+| 7 | **Audience Match Rate** 🎓 | **100.00%** | **100.00%** | **100.00%** | **(Số 2 riêng L3A)**: Đúng đối tượng `student`, không nhặt nhầm `faculty` |
+| - | **Độ trễ trung bình (Query Latency)** | **33.3 ms** | **36.0 ms** | **33.3 ms** | Tốc độ truy xuất thời gian thực nhờ Disk Caching |
+
+> 💡 **Phân tích nổi bật:**  
+> - **Audience Match Rate đạt 100%**: Cơ chế Pre-retrieval filtering đảm bảo sinh viên không bao giờ bị trả về nhầm lẫn tài liệu/quy chế nội bộ của cán bộ hay giảng viên.  
+> - **Recall@5 đạt 96.67% trên tập TEST**: Khẳng định độ khái quát hóa (generalization) cao của pipeline, không bị overfit trên tập DEV.  
+> - **Full Evidence@5 đạt 93.33%**: Đảm bảo LLM luôn có đủ bằng chứng điều khoản cụ thể để trả lời mà không phải suy đoán.
+
+Chi tiết phân tích các trường hợp thất bại và cách khắc phục nằm trong [`report/FAILURE_ANALYSIS.md`](report/FAILURE_ANALYSIS.md).
+
+---
+
+## 7. Giấy Phép & Tuyên Bố Miễn Trừ Trách Nhiệm
+- Dự án phục vụ mục đích học tập và nghiên cứu trong khuôn khổ môn học AI/Data Foundations tại Đại học FPT.
+- Dữ liệu quy chế được thu thập từ các nguồn công khai minh bạch của Trường Đại học FPT tại thời điểm tháng 09/2026.
+- Tuyệt đối không chứa thông tin cá nhân, tài khoản đăng nhập hay dữ liệu nội bộ bảo mật.

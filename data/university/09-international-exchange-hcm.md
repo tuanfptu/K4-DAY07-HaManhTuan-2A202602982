@@ -1,4 +1,5 @@
 ---
+doc_id: "09-international-exchange-hcm"
 title: "Chương trình trao đổi (Exchange)"
 source_url: "https://daihoc.fpt.edu.vn/hcm/chuong-trinh-trao-doi-exchange/"
 retrieved_at: "2026-09-19"

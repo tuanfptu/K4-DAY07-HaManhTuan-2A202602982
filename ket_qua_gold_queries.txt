@@ -1,0 +1,37 @@
+FPTU HCM RAG BENCHMARK EVALUATION: GOLD_QUERIES
+Total Queries: 5
+Recall@1: 0.5000
+Recall@5: 1.0000
+MRR: 0.7500
+nDCG@5: 0.8123
+Full Evidence@5: 0.6000
+Faithfulness / Agent Accuracy: 0.6333
+Audience Match Rate: 1.0000
+Avg Latency: 2.1ms
+
+DETAILS PER QUERY:
+[Q1] R@1=0.5 R@5=1.0 MRR=1.00 Faith=0.33 AudMatch=1.00
+  Q: Sinh viên cần đáp ứng đầy đủ những điều kiện nào để tham gia OJT?
+  Expected: 01-academic-regulations | Top-1: 07-ojt-regulations
+  Answer: Dựa trên tài liệu quy định và chính sách chính thức của Trường Đại học FPT TP.HCM, thông tin giải đáp cho câu hỏi 'Sinh viên cần đáp ứng đầy đủ những ...
+
+[Q2] R@1=0.0 R@5=1.0 MRR=0.50 Faith=1.00 AudMatch=1.00
+  Q: Học phí mỗi học kỳ năm 2026 của ngành Trí tuệ nhân tạo tại TP.HCM là bao nhiêu cho KV1 và các khu vực khác?
+  Expected: 03-tuition-hcm | Top-1: 06-campus-facilities-hcm
+  Answer: Dựa trên tài liệu quy định và chính sách chính thức của Trường Đại học FPT TP.HCM, thông tin giải đáp cho câu hỏi 'Học phí mỗi học kỳ năm 2026 của ngà...
+
+[Q3] R@1=1.0 R@5=1.0 MRR=1.00 Faith=0.50 AudMatch=1.00
+  Q: Hạn nộp hồ sơ học bổng năm 2026 là khi nào và GPA tối thiểu để duy trì học bổng là bao nhiêu?
+  Expected: 04-scholarship-faq | Top-1: 04-scholarship-faq
+  Answer: Dựa trên tài liệu quy định và chính sách chính thức của Trường Đại học FPT TP.HCM, thông tin giải đáp cho câu hỏi 'Hạn nộp hồ sơ học bổng năm 2026 là ...
+
+[Q4] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Trên FAP, sinh viên gửi và theo dõi đơn online như thế nào, đồng thời xem báo cáo điểm danh ở đâu?
+  Expected: 02-fap-and-academic-procedures | Top-1: 02-fap-and-academic-procedures
+  Answer: Dựa trên tài liệu quy định và chính sách chính thức của Trường Đại học FPT TP.HCM, thông tin giải đáp cho câu hỏi 'Trên FAP, sinh viên gửi và theo dõi...
+
+[Q5] R@1=0.0 R@5=1.0 MRR=0.25 Faith=0.33 AudMatch=1.00
+  Q: Sinh viên gặp vấn đề về thủ tục hành chính hoặc đời sống trong quá trình học tại campus TP.HCM thì liên hệ đơn vị nào, hotline và phòng bao nhiêu?
+  Expected: 05-student-services-hcm | Top-1: 10-departments-and-support-routing-hcm
+  Answer: Dựa trên tài liệu quy định và chính sách chính thức của Trường Đại học FPT TP.HCM, thông tin giải đáp cho câu hỏi 'Sinh viên gặp vấn đề về thủ tục hàn...
+

@@ -1,4 +1,5 @@
 ---
+doc_id: "01-academic-regulations"
 title: "QUY CHẾ ĐÀO TẠO ĐẠI HỌC CHÍNH QUY - Trường Đại học FPT"
 source_url: "https://daihoc.fpt.edu.vn/hoat-dong-nha-truong/tin-tuc-chung/quy-che-dao-tao-dai-hoc-chinh-quy/"
 retrieved_at: "2026-09-19"

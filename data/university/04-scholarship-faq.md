@@ -1,4 +1,5 @@
 ---
+doc_id: "04-scholarship-faq"
 title: "FAQ Học bổng - Trường Đại học FPT"
 source_url: "https://daihoc.fpt.edu.vn/hoc-bong/faq-hoc-bong/"
 retrieved_at: "2026-09-19"

@@ -1,4 +1,5 @@
 ---
+doc_id: "08-ojt-registration"
 title: "[OJT SPRING 2026] THÔNG BÁO VỀ VIỆC HƯỚNG DẪN SINH VIÊN ĐĂNG KÝ DOANH NGHIỆP OJT - Trường Đại học FPT"
 source_url: "https://daihoc.fpt.edu.vn/thong-bao-huong-dan/ojt-spring-2026-thong-bao-ve-viec-huong-dan-sinh-vien-dang-ky-doanh-nghiep-ojt/"
 retrieved_at: "2026-09-19"

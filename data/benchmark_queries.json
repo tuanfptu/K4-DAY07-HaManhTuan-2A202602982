@@ -1,0 +1,59 @@
+[
+  {
+    "id": "q1_academic_regulation",
+    "query": "What are the academic regulations regarding re-studying failed compulsory courses at FPT University?",
+    "query_vi": "Theo quy chế đào tạo của Trường Đại học FPT, sinh viên có học phần bắt buộc không đạt thì phải làm gì?",
+    "gold_answer": "Theo Điều 6 khoản 3 Quy chế đào tạo đại học chính quy của Trường Đại học FPT, sinh viên có học phần bắt buộc không đạt vì bất cứ lý do gì phải đăng ký học lại học phần đó, hoặc học phần tự chọn khác được quy định tương đương, ngay trong học kỳ hoặc ở các học kỳ tiếp sau cho đến khi đạt đủ các yêu cầu của học phần đó. Khi được bố trí học lại, sinh viên phải học lại theo đề cương học phần được phê duyệt triển khai tại thời điểm học lại.",
+    "expected_doc": "01-academic-regulations",
+    "expected_section": "Điều 6. Kế hoạch học tập",
+    "metadata_filter": null,
+    "query_type": "FACTUAL",
+    "requires_filter": false
+  },
+  {
+    "id": "q2_tuition_it_hcm",
+    "query": "What is the tuition fee per semester for the Information Technology major at FPT University HCMC campus?",
+    "query_vi": "Mức học phí mỗi học kỳ của ngành Công nghệ thông tin tại campus TP. Hồ Chí Minh là bao nhiêu?",
+    "gold_answer": "Theo biểu học phí chuẩn áp dụng cho tân sinh viên khóa K22 (nhập học năm 2026) tại campus TP. Hồ Chí Minh, học phí mỗi học kỳ của ngành Công nghệ thông tin là 22.120.000 VNĐ đối với KV1 và 31.600.000 VNĐ đối với các khu vực khác.",
+    "expected_doc": "03-tuition-hcm",
+    "expected_section": "Học phí mỗi học kỳ (+)",
+    "metadata_filter": null,
+    "query_type": "FACTUAL",
+    "requires_filter": false
+  },
+  {
+    "id": "q3_ojt_requirements",
+    "query": "What credit percentage and conditions are required for students to be eligible for the OJT semester?",
+    "query_vi": "Sinh viên cần đạt bao nhiêu phần trăm tín chỉ và đáp ứng điều kiện gì để đủ điều kiện tham gia học kỳ OJT?",
+    "gold_answer": "Sinh viên đủ điều kiện tham gia OJT khi thỏa mãn hai điều kiện: (1) Đạt ít nhất 90% tổng số tín chỉ tích lũy từ Học kỳ 1 đến Học kỳ 5 (không bao gồm các môn Giáo dục thể chất và Giáo dục quốc phòng) theo quy định của nhà trường; (2) Tự đọc và nghiên cứu kỹ tài liệu về OJT và tham gia đầy đủ buổi Orientation (nội dung bắt buộc và có điểm danh).",
+    "expected_doc": "07-ojt-regulations",
+    "expected_section": "1. QUY ĐỊNH VỀ OJT",
+    "metadata_filter": null,
+    "query_type": "FACTUAL",
+    "requires_filter": false
+  },
+  {
+    "id": "q4_support_routing_departments",
+    "query": "Who is the Head of the Student Services Department at FPT University HCMC campus?",
+    "query_vi": "Ai là Trưởng phòng Dịch vụ sinh viên tại Campus Trường Đại học FPT TP. Hồ Chí Minh?",
+    "gold_answer": "Trưởng phòng Dịch vụ sinh viên tại Campus Trường Đại học FPT TP. Hồ Chí Minh là Thầy Lê Gia Khánh (thuộc Khối Công Tác Sinh Viên).",
+    "expected_doc": "10-departments-and-support-routing-hcm",
+    "expected_section": "Khối Công Tác Sinh Viên",
+    "metadata_filter": null,
+    "query_type": "FACTUAL",
+    "requires_filter": false
+  },
+  {
+    "id": "q5_student_procedures_filter",
+    "query": "How can students submit online applications and view request results on the FAP portal?",
+    "query_vi": "Sinh viên thực hiện việc nộp các loại đơn từ online và theo dõi kết quả giải quyết ở mục nào trên cổng thông tin đào tạo FAP?",
+    "gold_answer": "Tại cổng thông tin đào tạo FAP (fap.fpt.edu.vn), sinh viên vào mục 'Academic Information', sử dụng chức năng gửi đơn từ online để lựa chọn hoặc thêm các loại đơn từ gửi Nhà trường phê duyệt, sau đó theo dõi tại mục 'Xem đơn' để nhận kết quả.",
+    "expected_doc": "02-fap-and-academic-procedures",
+    "expected_section": "Bước 3: Tại mục Academic Information",
+    "metadata_filter": {
+      "audience": "student"
+    },
+    "query_type": "FACTUAL",
+    "requires_filter": true
+  }
+]

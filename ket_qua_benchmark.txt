@@ -1,0 +1,85 @@
+======================================================================
+  FPTU Student Policy RAG — Benchmark Results
+  Mode: advanced
+  Timestamp: 2026-09-19 16:00:23
+======================================================================
+
+  Loading corpus from data/university...
+  Loaded 142 chunks in 102ms
+  Benchmark queries: 5
+  Embedding provider: gemini
+
+  Building retrieval index (mode=advanced)...
+  Index built in 79588ms
+
+──────────────────────────────────────────────────────────────────────
+  Running 5 benchmark queries...
+──────────────────────────────────────────────────────────────────────
+
+  ✓ [q1_academic_regulation]
+    Q: What are the academic regulations regarding re-studying failed compulsory courses at FPT University?
+    Gold: 01-academic-regulations | Top-1: 07-ojt-regulations
+    RR: 0.50 | Hit@3: True | Latency: 408ms
+
+  ✓ [q2_tuition_it_hcm]
+    Q: What is the tuition fee per semester for the Information Technology major at FPT University HCMC campus?
+    Gold: 03-tuition-hcm | Top-1: 03-tuition-hcm
+    RR: 1.00 | Hit@3: True | Latency: 449ms
+
+  ✓ [q3_ojt_requirements]
+    Q: What credit percentage and conditions are required for students to be eligible for the OJT semester?
+    Gold: 07-ojt-regulations | Top-1: 07-ojt-regulations
+    RR: 1.00 | Hit@3: True | Latency: 908ms
+
+  ✗ [q4_support_routing_departments]
+    Q: Who is the Head of the Student Services Department at FPT University HCMC campus?
+    Gold: 10-departments-and-support-routing-hcm | Top-1: 05-student-services-hcm
+    RR: 0.00 | Hit@3: False | Latency: 378ms
+
+  ✓ [q5_student_procedures_filter]
+    Q: How can students submit online applications and view request results on the FAP portal?
+    Gold: 02-fap-and-academic-procedures | Top-1: 02-fap-and-academic-procedures
+    RR: 1.00 | Hit@3: True | Latency: 375ms
+    Filter: {'audience': 'student'}
+
+
+============================================================
+  Evaluation Report: advanced
+============================================================
+  Total queries: 5
+  Hit@1:         60.00%
+  Hit@3:         80.00%
+  Recall@5:      80.00%
+  MRR:           0.7000
+  nDCG@5:        0.6885
+  Avg latency:   503.5ms
+============================================================
+
+  Per-query results:
+  ✓ [q1_academic_regulation] RR=0.50 | What are the academic regulations regarding re-stu...
+    Top-1: 07-ojt-regulations
+    Gold:  01-academic-regulations
+  ✓ [q2_tuition_it_hcm] RR=1.00 | What is the tuition fee per semester for the Infor...
+    Top-1: 03-tuition-hcm
+    Gold:  03-tuition-hcm
+  ✓ [q3_ojt_requirements] RR=1.00 | What credit percentage and conditions are required...
+    Top-1: 07-ojt-regulations
+    Gold:  07-ojt-regulations
+  ✗ [q4_support_routing_departments] RR=0.00 | Who is the Head of the Student Services Department...
+    Top-1: 05-student-services-hcm
+    Gold:  10-departments-and-support-routing-hcm
+  ✓ [q5_student_procedures_filter] RR=1.00 | How can students submit online applications and vi...
+    Top-1: 02-fap-and-academic-procedures
+    Gold:  02-fap-and-academic-procedures
+
+======================================================================
+  Summary
+======================================================================
+  Strategy:   advanced
+  Chunks:     142
+  Hit@1:      60%
+  Hit@3:      80%
+  MRR:        0.7000
+  nDCG@5:     0.6885
+  Avg latency: 504ms
+======================================================================

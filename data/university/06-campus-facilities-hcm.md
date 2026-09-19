@@ -1,4 +1,5 @@
 ---
+doc_id: "06-campus-facilities-hcm"
 title: "Toàn cầu, Công nghệ, Khởi nghiệp"
 source_url: "https://daihoc.fpt.edu.vn/hcm/"
 retrieved_at: "2026-09-19"

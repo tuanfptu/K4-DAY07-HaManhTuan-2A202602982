@@ -1,4 +1,5 @@
 ---
+doc_id: "05-student-services-hcm"
 title: "Liên hệ"
 source_url: "https://daihoc.fpt.edu.vn/hcm/lien-he/"
 retrieved_at: "2026-09-19"

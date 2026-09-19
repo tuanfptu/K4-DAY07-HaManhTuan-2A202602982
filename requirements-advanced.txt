@@ -1,0 +1,24 @@
+# Advanced RAG dependencies (optional)
+# Install: pip install -r requirements-advanced.txt
+
+# BM25 sparse retrieval
+rank-bm25>=0.2.2
+
+# Python dotenv for .env config loading
+python-dotenv>=1.0
+
+# Optional: local embedding models (requires GPU)
+# sentence-transformers>=2.2
+
+# Optional: Qwen reranker (requires GPU + transformers)
+# transformers>=4.40
+# torch>=2.0
+
+# Optional: Cohere reranker (requires API key)
+# cohere>=5.0
+
+# Optional: OpenAI embeddings (requires API key)
+# openai>=1.0
+
+# Optional: Google Generative AI (requires API key)
+# google-generativeai>=0.5

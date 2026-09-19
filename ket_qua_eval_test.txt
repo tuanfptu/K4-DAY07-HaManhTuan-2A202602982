@@ -1,0 +1,191 @@
+FPTU HCM RAG BENCHMARK EVALUATION: TEST
+Total Queries: 30
+Recall@1: 0.7667
+Recall@5: 0.9667
+MRR: 0.8483
+nDCG@5: 0.8657
+Full Evidence@5: 0.9333
+Faithfulness / Agent Accuracy: 0.5694
+Audience Match Rate: 1.0000
+Avg Latency: 1200.0ms
+
+DETAILS PER QUERY:
+[test_01] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Khóa sinh viên tại Đại học FPT được phân thành các nhóm nhỏ dựa trên tiêu chí gì?
+  Expected: 01-academic-regulations | Top-1: 01-academic-regulations
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Khóa sinh viên tại Đại học FPT được phân thành các nhóm nhỏ dựa trên tiêu chí gì?' như sa...
+
+[test_02] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Một năm học tại Đại học FPT gồm những học kỳ chính nào?
+  Expected: 01-academic-regulations | Top-1: 01-academic-regulations
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Một năm học tại Đại học FPT gồm những học kỳ chính nào?' như sau:
+
+c) Giai đoạn 3: đào tạ...
+
+[test_03] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Một tín chỉ thực hành hoặc thí nghiệm được quy định tương đương bao nhiêu tiết?
+  Expected: 01-academic-regulations | Top-1: 01-academic-regulations
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Một tín chỉ thực hành hoặc thí nghiệm được quy định tương đương bao nhiêu tiết?' như sau:...
+
+[test_04] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Một tín chỉ làm đồ án hoặc khóa luận tốt nghiệp tương đương bao nhiêu giờ làm việc?
+  Expected: 01-academic-regulations | Top-1: 01-academic-regulations
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Một tín chỉ làm đồ án hoặc khóa luận tốt nghiệp tương đương bao nhiêu giờ làm việc?' như ...
+
+[test_05] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Sinh viên muốn cải thiện điểm học phần đã đạt thì có được đăng ký học lại không?
+  Expected: 01-academic-regulations | Top-1: 01-academic-regulations
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Sinh viên muốn cải thiện điểm học phần đã đạt thì có được đăng ký học lại không?' như sau...
+
+[test_06] R@1=1.0 R@5=1.0 MRR=1.00 Faith=0.00 AudMatch=1.00
+  Q: Hình thức đánh giá học phần gồm những thành phần điểm nào?
+  Expected: 01-academic-regulations | Top-1: 01-academic-regulations
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Hình thức đánh giá học phần gồm những thành phần điểm nào?' như sau:
+
+1. Tùy theo tính ch...
+
+[test_07] R@1=1.0 R@5=1.0 MRR=1.00 Faith=0.00 AudMatch=1.00
+  Q: Sinh viên được công nhận tốt nghiệp khi thỏa mãn các điều kiện cơ bản nào?
+  Expected: 01-academic-regulations | Top-1: 01-academic-regulations
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Sinh viên được công nhận tốt nghiệp khi thỏa mãn các điều kiện cơ bản nào?' như sau:
+
+1. ...
+
+[test_08] R@1=1.0 R@5=1.0 MRR=1.00 Faith=0.50 AudMatch=1.00
+  Q: Thời hạn giải quyết phúc khảo bài thi kết thúc học phần là bao lâu?
+  Expected: 01-academic-regulations | Top-1: 01-academic-regulations
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Thời hạn giải quyết phúc khảo bài thi kết thúc học phần là bao lâu?' như sau:
+
+1. Sinh vi...
+
+[test_09] R@1=1.0 R@5=1.0 MRR=1.00 Faith=0.33 AudMatch=1.00
+  Q: Sinh viên xem lịch thi cuối kỳ ở mục nào trên cổng FAP?
+  Expected: 02-fap-and-academic-procedures | Top-1: 02-fap-and-academic-procedures
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Sinh viên xem lịch thi cuối kỳ ở mục nào trên cổng FAP?' như sau:
+
+- **Hai là chức năng t...
+
+[test_10] R@1=0.0 R@5=1.0 MRR=0.50 Faith=0.50 AudMatch=1.00
+  Q: Làm thế nào để sinh viên nộp đơn phúc khảo bài thi trên cổng FAP?
+  Expected: 02-fap-and-academic-procedures | Top-1: 01-academic-regulations
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Làm thế nào để sinh viên nộp đơn phúc khảo bài thi trên cổng FAP?' như sau:
+
+1. Sinh viên...
+
+[test_11] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Học phí một học kỳ ngành An toàn thông tin tại campus TP.HCM là bao nhiêu đối với KV1?
+  Expected: 03-tuition-hcm | Top-1: 03-tuition-hcm
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Học phí một học kỳ ngành An toàn thông tin tại campus TP.HCM là bao nhiêu đối với KV1?' n...
+
+[test_12] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Học phí chuyên ngành Vi mạch bán dẫn tại campus TP.HCM cho các khu vực khác là bao nhiêu?
+  Expected: 03-tuition-hcm | Top-1: 03-tuition-hcm
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Học phí chuyên ngành Vi mạch bán dẫn tại campus TP.HCM cho các khu vực khác là bao nhiêu?...
+
+[test_13] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Học phí ngành Truyền thông đa phương tiện tại campus TP.HCM là bao nhiêu cho KV1?
+  Expected: 03-tuition-hcm | Top-1: 03-tuition-hcm
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Học phí ngành Truyền thông đa phương tiện tại campus TP.HCM là bao nhiêu cho KV1?' như sa...
+
+[test_14] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Học phí ngành Quan hệ công chúng tại campus TP.HCM là bao nhiêu cho khu vực khác?
+  Expected: 03-tuition-hcm | Top-1: 03-tuition-hcm
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Học phí ngành Quan hệ công chúng tại campus TP.HCM là bao nhiêu cho khu vực khác?' như sa...
+
+[test_15] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Ngành Quản trị khách sạn tại campus TP.HCM có mức học phí một kỳ là bao nhiêu?
+  Expected: 03-tuition-hcm | Top-1: 03-tuition-hcm
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Ngành Quản trị khách sạn tại campus TP.HCM có mức học phí một kỳ là bao nhiêu?' như sau:
+...
+
+[test_16] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Ngành Logistics và quản lý chuỗi cung ứng toàn cầu tại campus HCM có học phí bao nhiêu?
+  Expected: 03-tuition-hcm | Top-1: 03-tuition-hcm
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Ngành Logistics và quản lý chuỗi cung ứng toàn cầu tại campus HCM có học phí bao nhiêu?' ...
+
+[test_17] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Đối tượng ưu tiên tham gia chương trình học bổng Đại học FPT năm 2026 là ai?
+  Expected: 04-scholarship-faq | Top-1: 04-scholarship-faq
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Đối tượng ưu tiên tham gia chương trình học bổng Đại học FPT năm 2026 là ai?' như sau:
+
+Ư...
+
+[test_18] R@1=1.0 R@5=1.0 MRR=1.00 Faith=0.50 AudMatch=1.00
+  Q: Có bắt buộc phải nộp video khi nộp hồ sơ ứng tuyển học bổng không?
+  Expected: 04-scholarship-faq | Top-1: 04-scholarship-faq
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Có bắt buộc phải nộp video khi nộp hồ sơ ứng tuyển học bổng không?' như sau:
+
+Bạn có thể ...
+
+[test_19] R@1=1.0 R@5=1.0 MRR=1.00 Faith=1.00 AudMatch=1.00
+  Q: Vòng phỏng vấn học bổng áp dụng cho các hạng mục học bổng nào?
+  Expected: 04-scholarship-faq | Top-1: 04-scholarship-faq
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Vòng phỏng vấn học bổng áp dụng cho các hạng mục học bổng nào?' như sau:
+
+Quy trình xét t...
+
+[test_20] R@1=1.0 R@5=1.0 MRR=1.00 Faith=0.00 AudMatch=1.00
+  Q: Sinh viên muốn mượn sách thư viện campus HCM cần xuất trình giấy tờ gì?
+  Expected: 06-campus-facilities-hcm | Top-1: 06-campus-facilities-hcm
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Sinh viên muốn mượn sách thư viện campus HCM cần xuất trình giấy tờ gì?' như sau:
+
+Thư vi...
+
+[test_21] R@1=1.0 R@5=1.0 MRR=1.00 Faith=0.00 AudMatch=1.00
+  Q: Học kỳ OJT có mục tiêu đào tạo chính là gì đối với sinh viên?
+  Expected: 07-ojt-regulations | Top-1: 07-ojt-regulations
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Học kỳ OJT có mục tiêu đào tạo chính là gì đối với sinh viên?' như sau:
+
+- Sinh viên cần ...
+
+[test_22] R@1=0.0 R@5=0.0 MRR=0.00 Faith=0.33 AudMatch=1.00
+  Q: Sinh viên đi OJT có được hưởng phụ cấp hoặc lương từ doanh nghiệp không?
+  Expected: 07-ojt-regulations | Top-1: 08-ojt-registration
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Sinh viên đi OJT có được hưởng phụ cấp hoặc lương từ doanh nghiệp không?' như sau:
+
+- Các...
+
+[test_23] R@1=1.0 R@5=1.0 MRR=1.00 Faith=0.33 AudMatch=1.00
+  Q: Khi tham gia OJT sinh viên có cần giảng viên hướng dẫn của trường theo dõi không?
+  Expected: 07-ojt-regulations | Top-1: 07-ojt-regulations
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Khi tham gia OJT sinh viên có cần giảng viên hướng dẫn của trường theo dõi không?' như sa...
+
+[test_24] R@1=0.0 R@5=1.0 MRR=0.25 Faith=0.67 AudMatch=1.00
+  Q: Quy trình phỏng vấn tuyển dụng OJT do ai tổ chức?
+  Expected: 08-ojt-registration | Top-1: 04-scholarship-faq
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Quy trình phỏng vấn tuyển dụng OJT do ai tổ chức?' như sau:
+
+Chương trình có vòng phỏng v...
+
+[test_25] R@1=1.0 R@5=1.0 MRR=1.00 Faith=0.33 AudMatch=1.00
+  Q: Sinh viên cần xác nhận kết quả trúng tuyển OJT trong vòng bao nhiêu ngày kể từ khi nhận thông báo?
+  Expected: 08-ojt-registration | Top-1: 08-ojt-registration
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Sinh viên cần xác nhận kết quả trúng tuyển OJT trong vòng bao nhiêu ngày kể từ khi nhận t...
+
+[test_26] R@1=0.0 R@5=1.0 MRR=0.50 Faith=0.00 AudMatch=1.00
+  Q: Chương trình trao đổi quốc tế thường được tổ chức với các trường đại học ở quốc gia nào?
+  Expected: 09-international-exchange-hcm | Top-1: 06-campus-facilities-hcm
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Chương trình trao đổi quốc tế thường được tổ chức với các trường đại học ở quốc gia nào?'...
+
+[test_27] R@1=0.0 R@5=1.0 MRR=0.50 Faith=0.00 AudMatch=1.00
+  Q: Sinh viên tham gia trao đổi sinh viên quốc tế tự chi trả những khoản chi phí nào?
+  Expected: 09-international-exchange-hcm | Top-1: 06-campus-facilities-hcm
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Sinh viên tham gia trao đổi sinh viên quốc tế tự chi trả những khoản chi phí nào?' như sa...
+
+[test_28] R@1=1.0 R@5=1.0 MRR=1.00 Faith=0.25 AudMatch=1.00
+  Q: Khối Công tác sinh viên tại campus HCM phụ trách những hoạt động nào?
+  Expected: 10-departments-and-support-routing-hcm | Top-1: 10-departments-and-support-routing-hcm
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Khối Công tác sinh viên tại campus HCM phụ trách những hoạt động nào?' như sau:
+
+Cô Lê Th...
+
+[test_29] R@1=0.0 R@5=1.0 MRR=0.50 Faith=0.00 AudMatch=1.00
+  Q: Phòng PDP (Phát triển cá nhân) tại campus HCM hỗ trợ sinh viên rèn luyện nội dung gì?
+  Expected: 10-departments-and-support-routing-hcm | Top-1: 05-student-services-hcm
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Phòng PDP (Phát triển cá nhân) tại campus HCM hỗ trợ sinh viên rèn luyện nội dung gì?' nh...
+
+[test_30] R@1=0.0 R@5=1.0 MRR=0.20 Faith=0.33 AudMatch=1.00
+  Q: Địa chỉ phòng y tế campus HCM để sinh viên sơ cứu khi có vấn đề sức khỏe ở đâu?
+  Expected: 10-departments-and-support-routing-hcm | Top-1: 05-student-services-hcm
+  Answer: Dựa trên tài liệu tìm được, thông tin liên quan đến câu hỏi 'Địa chỉ phòng y tế campus HCM để sinh viên sơ cứu khi có vấn đề sức khỏe ở đâu?' như sau:...
+

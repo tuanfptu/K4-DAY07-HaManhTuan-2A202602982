@@ -1,4 +1,5 @@
 ---
+doc_id: "02-fap-and-academic-procedures"
 title: "Hướng dẫn sử dụng cổng thông tin đào tạo FAP cho tân sinh viên Trường Đại học FPT - Trường Đại học FPT"
 source_url: "https://daihoc.fpt.edu.vn/tin-tuc-chung-2/huong-dan-su-dung-cong-thong-tin-dao-tao-fap-cho-tan-sinh-vien-dai-hoc-fpt/"
 retrieved_at: "2026-09-19"
